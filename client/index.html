@@ -1,0 +1,2883 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO">
+<meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="fb:app_id" content="677505792353827"/>
+<meta property="og:title" content="Agar.io"/>
+<meta property="og:description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO"/>
+<meta property="og:url" content="http://agar.io"/>
+<meta property="og:image" content="http://agar.io/img/1200x630.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:type" content="website"/>
+<title>Agar.io</title>
+<link id="favicon" rel="icon" type="image/png" href="favicon-32x32.png"/>
+ 
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/glyphicons-social.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<style>body{padding:0;margin:0;overflow:hidden;}#canvas{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;}form{margin-bottom:0px;}.btn-play,.btn-settings,.btn-spectate,.btn-play-guest,.btn-login,.btn-logout{display:block;float:left;height:35px;}.btn-spectate,.btn-logout{height:35px;display:block;width:110px;margin-left:10px;margin-bottom:5px;}#helloContainer[data-logged-in="0"] .btn-play-guest{margin-left:5px;width:125px;}#helloContainer[data-logged-in="0"] .btn-login{margin-left:5px;width:145px;}#helloContainer[data-logged-in="0"] .agario-exp-bar,#helloContainer[data-logged-in="0"] .progress-bar-star,#helloContainer[data-logged-in="0"] #agario-main-buttons .agario-profile,#helloContainer[data-logged-in="0"] .btn-play{display:none;}#helloContainer[data-logged-in="0"] .btn-logout{display:none;}#helloContainer[data-logged-in="1"] .btn-play{margin-left:5px;width:275px;}#helloContainer[data-logged-in="1"] .btn-play-guest{display:none;}#helloContainer[data-logged-in="1"] .btn-login{display:none;}.btn-settings{width:40px;}.btn-spectate{display:block;float:right;}#adsBottom{position:absolute;left:0;right:0;bottom:0;}#adsBottomInner{margin:0px auto;width:728px;height:90px;border:5px solid white;border-radius:5px 5px 0px 0px;background-color:#FFFFFF;box-sizing:content-box;}.region-message{display:none;margin-bottom:12px;margin-left:6px;margin-right:6px;text-align:center;}#nick{width:10%;padding: 0px; left: 46%; top: -12px;position: relative;}#locationKnown #region{width:100%;}#locationUnknown #region{margin-bottom:15px;}#gamemode{width:10%;float:right;top: -6px;right: 44%;position: relative;}.agario-panel{display:inline-block;width:350px;background-color:rgba(25, 28, 29, 0.72);margin:2px;border-radius:10px;padding:5px 15px 5px 15px;vertical-align:top;}.agario-side-panel{display:inline-block;width:220px;}#helloContainer,.connecting-panel{position:absolute;top:50%;left:50%;margin-right:-50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}#a300x250{width:300px;height:250px;background-repeat:no-repeat;background-size:contain;background-position:center center;}.agario-exp-bar{height:30px;position:relative;border:2px solid #01612B;}.agario-exp-bar .progress-bar{background-color:#338833;border-radius:0px 4px 4px 0px;-webkit-transition:none;transition:none;}.agario-exp-bar .progress-bar-text{font-size:12pt;cursor:default;opacity:0.75;color:#FFF;text-align:center;line-height:26px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;position:absolute;top:0;bottom:0;left:0;right:0;font-family:'Ubuntu',sans-serif;}#agario-results-table{width:100%;}#agario-results-table th{text-align:center;font-size:8pt;}#agario-results-table td{text-align:center;color:#999;font-size:11pt;padding-bottom:15px;}.progress-bar-star{position:absolute;top:-13px;right:-16px;width:50px;height:50px;background-image:url("img/star.png");background-size:cover;-webkit-transform:rotate3d(0,0,1,10deg);transform:rotate3d(0,0,1,10deg);-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:default;color:#FFF;text-align:center;line-height:55px;font-size:12pt;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;font-family:'Ubuntu',sans-serif;}.tooltip-inner{max-width:300px;}.agario-profile-panel{padding:15px 15px 15px 15px;}.agario-profile-panel .agario-profile-picture{float:left;display:block;width:64px;height:64px;border-radius:5px;border:2px solid #CCC;margin-right:6px;}.agario-profile-panel .agario-profile-name-container{float:left;display:table;width:120px;height:64px;position:relative;}.agario-profile-panel .agario-profile-name-container .agario-profile-name{display:table-cell;vertical-align:middle;text-align:center;font-weight:bold;}#helloContainer[data-has-account-data="0"] .agario-profile-panel{display:none;}.agario-party,.agario-party-0,.agario-party-1,.agario-party-2,.agario-party-3,.agario-party-4,.agario-party-5,.agario-party-6{display:none;}#helloContainer[data-gamemode=":party"] .agario-party{display:block;position:relative;}#helloContainer[data-gamemode=":party"] .agario-promo{display:none;}#helloContainer[data-party-state="0"] .agario-party-0{display:block;}#helloContainer[data-party-state="1"] .agario-party-1{display:block;}#helloContainer[data-party-state="2"] .agario-party-2{display:block;}#helloContainer[data-party-state="3"] .agario-party-3{display:block;}#helloContainer[data-party-state="4"] .agario-party-4{display:block;}#helloContainer[data-party-state="5"] .agario-party-5{display:block;}#helloContainer[data-party-state="6"] .agario-party-6{display:block;}.partyToken{margin-bottom:10px;}.side-container{vertical-align:top;display:inline-block;width:224px;}.cell-spinner{display:block;margin:0;}.creating-party-text{position:absolute;cursor:default;top:0;bottom:0;left:0;right:0;width:100%;height:100%;text-align:center;color:#FFF;font-size:24px;line-height:100px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;}.agario-results-0,.agario-results-1,.agario-results-2{display:none;}#helloContainer[data-results-state="0"] .agario-results-0{display:block;}#helloContainer[data-results-state="1"] .agario-results-1{display:block;}#helloContainer[data-results-state="2"] .agario-results-2{display:block;}#options>label{display:block;width:94px;float:left;}#stats{position:relative;width:350px;height:581px;padding:0px 0px 300px 0px;overflow:hidden;}#statsPelletsContainer,#statsTimeAliveContainer,#statsHighestMassContainer,#statsTimeLeaderboardContainer,#statsPlayerCellsEatenContainer,#statsTopPositionContainer{position:absolute;width:100px;height:100px;}#statsPelletsContainer{top:30px;left:50px;}#statsHighestMassContainer{top:30px;right:50px;}#statsTimeAliveContainer{top:85px;left:50px;}#statsTimeLeaderboardContainer{top:85px;right:50px;}#statsPlayerCellsEatenContainer{top:140px;left:50px;}#statsTopPositionContainer{top:140px;right:50px;}#statsPellets{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}#statsText{position:absolute;top:0;bottom:0;left:0;right:0;line-height:100px;font-size:23px;}#statsSubtext{position:absolute;bottom:0;left:0;right:0;line-height:60px;font-size:12px;color:#000;text-align:center;}#statsChartText{position:absolute;left:20px;bottom:250px;line-height:40px;font-size:40px;}#statsChartText,#statsText{cursor:default;color:#444;text-align:center;font-weight:bold;}#statsContinue{position:absolute;left:25px;right:25px;width:300px;bottom:295px;}#statsGraph{position:absolute;bottom:350px;left:0px;right:0px;opacity:0.4;}#s300x250{position:absolute;bottom:10px;left:25px;right:25px;width:300px;height:250px;}.tosBox{z-index:1000;position:absolute;bottom:0;right:0;background-color:#FFF;border-radius:5px 0px 0px 0px;padding:5px 10px;}</style>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+i18n_lang = 'en';
+i18n_dict = {
+  'en': {
+    'connecting': 'Connecting',
+    'connect_help': 'If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.',
+    'play': 'Play',
+    'spectate': 'Spectate',
+    'login_and_play': 'Login and play',
+    'play_as_guest': 'Play as guest',
+    'share': 'Share',
+    'advertisement': 'Advertisement',
+    'privacy_policy': 'Privacy Policy',
+    'terms_of_service': 'Terms of Service',
+    'changelog': 'Changelog',
+    'instructions_mouse': 'Move your mouse to control your cell',
+    'instructions_space': 'Press <b>Space</b> to split',
+    'instructions_w': 'Press <b>W</b> to eject some mass',
+    'gamemode_ffa': 'FFA',
+    'gamemode_teams': 'Teams',
+    'gamemode_experimental': 'Experimental',
+    'region_select': ' -- Select a Region -- ',
+    'region_us_east': 'US East',
+    'region_us_west': 'US West',
+    'region_north_america': 'North America',
+    'region_south_america': 'South America',
+    'region_europe': 'Europe',
+    'region_turkey': 'Turkey',
+    'region_poland': 'Poland',
+    'region_east_asia': 'East Asia',
+    'region_russia': 'Russia',
+    'region_china': 'China',
+    'region_oceania': 'Oceania',
+    'region_australia': 'Australia',
+    'region_players': 'players',
+    'option_no_skins': 'No skins',
+    'option_no_names': 'No names',
+    'option_dark_theme': 'Dark theme',
+    'option_no_colors': 'No colors',
+    'option_show_mass': 'Show mass',
+    'leaderboard': 'Made by Eptun',
+    'unnamed_cell': 'An unnamed cell',
+    'last_match_results': 'Last match results',
+    'score': 'Score',
+    'leaderboard_time': 'Leaderboard Time',
+    'mass_eaten': 'Mass Eaten',
+    'top_position': 'Top Position',
+    'position_1': 'First',
+    'position_2': 'Second',
+    'position_3': 'Third',
+    'position_4': 'Fourth',
+    'position_5': 'Fifth',
+    'position_6': 'Sixth',
+    'position_7': 'Seventh',
+    'position_8': 'Eighth',
+    'position_9': 'Ninth',
+    'position_10': 'Tenth',
+    'player_cells_eaten': 'Player Cells Eaten',
+    'survival_time': 'Survival Time',
+    'games_played': 'Games played',
+    'highest_mass': 'Highest mass',
+    'total_cells_eaten': 'Total cells eaten',
+    'total_mass_eaten': 'Total mass eaten',
+    'longest_survival': 'Longest survival',
+    'logout': 'Logout',
+    'stats': 'Stats',
+    'shop': 'Shop',
+    'party': 'Party',
+    'party_description': 'Play with your friends in the same map',
+    'create_party': 'Create',
+    'creating_party': 'Creating party...',
+    'join_party': 'Join',
+    'back_button': 'Back',
+    'joining_party': 'Joining party...',
+    'joined_party_instructions': 'You are now playing with this party:',
+    'party_join_error': 'There was a problem joining that party, please make sure the code is correct, or try creating another party',
+    'login_tooltip': 'Login with Facebook and get:<br\xA0/><br /><br />Start the game with more mass!<br />Level up to get even more starting mass!',
+    'create_party_instructions': 'Give this link to your friends:',
+    'join_party_instructions': 'Your friend should have given you a code, type it here:',
+    'continue': 'Continue',
+    'option_skip_stats': 'Skip stats',
+    'stats_food_eaten': 'food eaten',
+    'stats_highest_mass': 'highest mass',
+    'stats_time_alive': 'time alive',
+    'stats_leaderboard_time': 'leaderboard time',
+    'stats_cells_eaten': 'cells eaten',
+    'stats_top_position': 'top position',
+    '': ''
+  },
+  '?': {}
+};
+i18n_lang = (window.navigator.userLanguage || window.navigator.language || 'en').split('-')[0];
+if (!i18n_dict.hasOwnProperty(i18n_lang)) {
+  i18n_lang = 'en';
+}
+i18n = i18n_dict[i18n_lang];
+(function(window, $) {
+  function Init() {
+    g_drawLines = true;
+    PlayerStats();
+    setInterval(PlayerStats, 180000);
+    g_canvas = g_canvas_ = document.getElementById('canvas');
+    g_context = g_canvas.getContext('2d');
+    g_canvas.onmousedown = function(event) {
+      if (g_touchCapable) {
+        var deltaX = event.clientX - (5 + g_protocol / 5 / 2);
+        var deltaY = event.clientY - (5 + g_protocol / 5 / 2);
+        if (Math.sqrt(deltaX * deltaX + deltaY * deltaY) <= g_protocol / 5 / 2) {
+          SendPos();
+          SendCmd(17);
+          return;
+        }
+      }
+      g_mouseX = event.clientX;
+      g_mouseY = event.clientY;
+      UpdatePos();
+      SendPos();
+    };
+    g_canvas.onmousemove = function(event) {
+      g_mouseX = event.clientX;
+      g_mouseY = event.clientY;
+      UpdatePos();
+    };
+    g_canvas.onmouseup = function() {};
+    if (/firefox/i.test(navigator.userAgent)) {
+      document.addEventListener('DOMMouseScroll', WheelHandler, false);
+    } else {
+      document.body.onmousewheel = WheelHandler;
+    }
+    var spaceDown = false;
+    var cachedSkin = false;
+    var wkeyDown = false;
+    var keyEPressed = false; //XXX
+    window.onkeydown = function(event) {
+      if (!(32 != event.keyCode || spaceDown)) {
+        SendPos();
+        SendCmd(17);
+        spaceDown = true;
+      }
+      if (!(81 != event.keyCode || cachedSkin)) {
+        SendCmd(18);
+        cachedSkin = true;
+      }
+      if (!(87 != event.keyCode || wkeyDown)) {
+        SendPos();
+        SendCmd(21);
+        wkeyDown = true;
+      }
+      if (69 == event.keyCode) { //XXX
+           if (!keyEPressed) {
+           keyEPressed = true;
+           timerE();
+           }
+      }
+
+      if (27 == event.keyCode) {
+        __unmatched_10(300);
+      }
+    };
+    window.onkeyup = function(event) {
+      if (32 == event.keyCode) {
+        spaceDown = false;
+      }
+      if (87 == event.keyCode) {
+        wkeyDown = false;
+      }
+      if (81 == event.keyCode && cachedSkin) {
+        SendCmd(19);
+        cachedSkin = false;
+      }
+      if (69 == event.keyCode) { //XXX
+                if (keyEPressed) {
+                    keyEPressed = false;
+                }
+            }
+    };
+    window.onblur = function() {
+      SendCmd(19);
+      wkeyDown = cachedSkin = spaceDown = keyEPressed = false; //XXX
+    };
+    function timerE () { //XXX
+      if (keyEPressed) {
+          SendPos();
+          SendCmd(21);
+          setInterval(timerE, 200);
+      }
+    }
+    window.onresize = ResizeHandler;
+    window.requestAnimationFrame(__unmatched_130);
+    setInterval(SendPos, 40);
+    if (g_region) {
+      $('#region').val(g_region);
+    }
+    SyncRegion();
+    SetRegion($('#region').val());
+    if (0 == __unmatched_112 && g_region) {
+      Start();
+    }
+    __unmatched_10(0);
+    ResizeHandler();
+    if (window.location.hash && 6 <= window.location.hash.length) {
+      RenderLoop(window.location.hash);
+    }
+  }
+  function WheelHandler(event) {
+    g_zoom *= Math.pow(0.9, event.wheelDelta / -120 || event.detail || 0);
+    if(!isUnlimitedZoom) {
+    if (1 > g_zoom) {
+      g_zoom = 1;
+    }
+    if (g_zoom > 4 / g_scale) {
+      g_zoom = 4 / g_scale;
+       }
+    }
+  }
+  function UpdateTree() {
+    if (0.4 > g_scale) {
+      g_pointTree = null;
+    } else {
+      for (var minX = Number.POSITIVE_INFINITY, minY = Number.POSITIVE_INFINITY, maxX = Number.NEGATIVE_INFINITY, maxY = Number.NEGATIVE_INFINITY, maxSize = 0, i = 0; i < g_cells.length; i++) {
+        var cell = g_cells[i];
+        if (!(!cell.N() || cell.R || 20 >= cell.size * g_scale)) {
+          maxSize = Math.max(cell.size, maxSize);
+          minX = Math.min(cell.x, minX);
+          minY = Math.min(cell.y, minY);
+          maxX = Math.max(cell.x, maxX);
+          maxY = Math.max(cell.y, maxY);
+        }
+      }
+      g_pointTree = QTreeFactory.la({
+        ca: minX - (maxSize + 100),
+        da: minY - (maxSize + 100),
+        oa: maxX + (maxSize + 100),
+        pa: maxY + (maxSize + 100),
+        ma: 2,
+        na: 4
+      });
+      for (i = 0; i < g_cells.length; i++) {
+        if (cell = g_cells[i], cell.N() && !(20 >= cell.size * g_scale)) {
+          for (minX = 0; minX < cell.a.length; ++minX) {
+            minY = cell.a[minX].x;
+            maxX = cell.a[minX].y;
+            if (!(minY < g_viewX - g_protocol / 2 / g_scale || maxX < g_viewY - __unmatched_60 / 2 / g_scale || minY > g_viewX + g_protocol / 2 / g_scale || maxX > g_viewY + __unmatched_60 / 2 / g_scale)) {
+              g_pointTree.m(cell.a[minX]);
+            }
+          }
+        }
+      }
+    }
+  }
+  function UpdatePos() {
+    g_moveX = (g_mouseX - g_protocol / 2) / g_scale + g_viewX;
+    g_moveY = (g_mouseY - __unmatched_60 / 2) / g_scale + g_viewY;
+  }
+  function PlayerStats() {
+    if (null == g_regionLabels) {
+      g_regionLabels = {};
+      $('#region').children().each(function() {
+        var $this = $(this);
+        var val = $this.val();
+        if (val) {
+          g_regionLabels[val] = $this.text();
+        }
+      });
+    }
+    $.get('https://m.agar.io/info', function(data) {
+      var regionNumPlayers = {};
+      var region;
+      for (region in data.regions) {
+        var region_ = region.split(':')[0];
+        regionNumPlayers[region_] = regionNumPlayers[region_] || 0;
+        regionNumPlayers[region_] += data.regions[region].numPlayers;
+      }
+      for (region in regionNumPlayers) {
+        $('#region option[value="' + region + '"]').text(g_regionLabels[region] + ' (' + regionNumPlayers[region] + ' players)');
+      }
+    }, 'json');
+  }
+  function HideOverlay() {
+    $('#adsBottom').hide();
+    $('#overlays').hide();
+    $('#stats').hide();
+    $('#mainPanel').hide();
+    __unmatched_141 = g_playerCellDestroyed = false;
+    SyncRegion();
+    if (window.googletag && window.googletag.pubads && window.googletag.pubads().clear) {
+      window.googletag.pubads().clear(window.aa.concat(window.ab));
+    }
+  }
+  function SetRegion(val) {
+    if (val && val != g_region) {
+      if ($('#region').val() != val) {
+        $('#region').val(val);
+      }
+      g_region = window.localStorage.location = val;
+      $('.region-message').hide();
+      $('.region-message.' + val).show();
+      $('.btn-needs-server').prop('disabled', false);
+      if (g_drawLines) {
+        Start();
+      }
+    }
+  }
+  function __unmatched_10(char) {
+    if (!(g_playerCellDestroyed || __unmatched_141)) {
+      $('#adsBottom').show();
+      g_nick = null;
+      __unmatched_13(window.aa);
+      if (1000 > char) {
+        qkeyDown = 1;
+      }
+      g_playerCellDestroyed = true;
+      $('#mainPanel').show();
+      if (0 < char) {
+        $('#overlays').fadeIn(char);
+      } else {
+        $('#overlays').show();
+      }
+    }
+  }
+  function Render(__unmatched_174) {
+    $('#helloContainer').attr('data-gamemode', __unmatched_174);
+    __unmatched_95 = __unmatched_174;
+    $('#gamemode').val(__unmatched_174);
+  }
+  function SyncRegion() {
+    if ($('#region').val()) {
+      window.localStorage.location = $('#region').val();
+    } else if (window.localStorage.location) {
+      $('#region').val(window.localStorage.location);
+    }
+    if ($('#region').val()) {
+      $('#locationKnown').append($('#region'));
+    } else {
+      $('#locationUnknown').append($('#region'));
+    }
+  }
+  function __unmatched_13(__unmatched_175) {
+    if (window.googletag) {
+      window.googletag.cmd.push(function() {
+        if (g_canRefreshAds) {
+          g_canRefreshAds = false;
+          setTimeout(function() {
+            g_canRefreshAds = true;
+          }, 60000 * g_refreshAdsCooldown);
+          if (window.googletag && window.googletag.pubads && window.googletag.pubads().refresh) {
+            window.googletag.pubads().refresh(__unmatched_175);
+          }
+        }
+      });
+    }
+  }
+  function __unmatched_14(i_) {
+    return window.i18n[i_] || window.i18n_dict.en[i_] || i_;
+  }
+  function FindGame() {
+    var __unmatched_177 = ++__unmatched_112;
+    console.log('Find ' + g_region + __unmatched_95);
+    $.ajax('https://m.agar.io/', {
+      error: function() {
+        setTimeout(FindGame, 1000);
+      },
+      success: function(__unmatched_178) {
+        if (__unmatched_177 == __unmatched_112) {
+          __unmatched_178 = __unmatched_178.split('\n');
+          if (__unmatched_178[2]) {
+            alert(__unmatched_178[2]);
+          }
+          Connect('ws://' + __unmatched_178[0], __unmatched_178[1]);
+        }
+      },
+      dataType: 'text',
+      method: 'POST',
+      cache: false,
+      crossDomain: true,
+      data: (g_region + __unmatched_95 || '?') + '\n154669603'
+    });
+  }
+  function Start() {
+    if (g_drawLines && g_region) {
+      $('#connecting').show();
+      FindGame();
+    }
+  }
+  function Connect(address, ticket) {
+    if (points) {
+      points.onopen = null;
+      points.onmessage = null;
+      points.onclose = null;
+      try {
+        points.close();
+      } catch (exception) {}
+      points = null;
+    }
+    if (__unmatched_113.ip) {
+      address = 'ws://' + __unmatched_113.ip;
+    }
+    if (null != __unmatched_121) {
+      var __unmatched_181 = __unmatched_121;
+      __unmatched_121 = function() {
+        __unmatched_181(ticket);
+      };
+    }
+    if (g_secure) {
+      var parts = address.split(':');
+      address = parts[0] + 's://ip-' + parts[1].replace(/\./g, '-').replace(/\//g, '') + '.tech.agar.io:' + (+parts[2] + 2000);
+    }
+    g_playerCellIds = [];
+    g_playerCells = [];
+    g_cellsById = {};
+    g_cells = [];
+    g_destroyedCells = [];
+    g_scoreEntries = [];
+    g_leaderboardCanvas = g_scorePartitions = null;
+    g_maxScore = 0;
+    g_connectSuccessful = false;
+    console.log('Connecting to ' + address);
+    points = new WebSocket(address);
+    points.binaryType = 'arraybuffer';
+    points.onopen = function() {
+      var data;
+      console.log('socket open');
+      data = GetBuffer(5);
+      data.setUint8(0, 254);
+      data.setUint32(1, 5, true);
+      SendBuffer(data);
+      data = GetBuffer(5);
+      data.setUint8(0, 255);
+      data.setUint32(1, 154669603, true);
+      SendBuffer(data);
+      data = GetBuffer(1 + ticket.length);
+      data.setUint8(0, 80);
+      for (var i = 0; i < ticket.length; ++i) {
+        data.setUint8(i + 1, ticket.charCodeAt(i));
+      }
+      SendBuffer(data);
+      RefreshAds();
+    };
+    points.onmessage = MessageHandler;
+    points.onclose = CloseHandler;
+    points.onerror = function() {
+      console.log('socket error');
+    };
+  }
+  function GetBuffer(size) {
+    return new DataView(new ArrayBuffer(size));
+  }
+  function SendBuffer(data) {
+    points.send(data.buffer);
+  }
+  function CloseHandler() {
+    if (g_connectSuccessful) {
+      g_retryTimeout = 500;
+    }
+    console.log('socket close');
+    setTimeout(Start, g_retryTimeout);
+    g_retryTimeout *= 2;
+  }
+  function MessageHandler(data) {
+    Receive(new DataView(data.data));
+  }
+  function Receive(data) {
+    function __unmatched_190() {
+      for (var string = '';;) {
+        var char = data.getUint16(pos, true);
+        pos += 2;
+        if (0 == char) {
+          break;
+        }
+        string += String.fromCharCode(char);
+      }
+      return string;
+    }
+    var pos = 0;
+    if (240 == data.getUint8(pos)) {
+      pos += 5;
+    }
+    switch (data.getUint8(pos++)) {
+      case 16:
+        ParseCellUpdates(data, pos);
+        break;
+      case 17:
+        g_viewX_ = data.getFloat32(pos, true);
+        pos += 4;
+        g_viewY_ = data.getFloat32(pos, true);
+        pos += 4;
+        g_scale_ = data.getFloat32(pos, true);
+        pos += 4;
+        break;
+      case 20:
+        g_playerCells = [];
+        g_playerCellIds = [];
+        break;
+      case 21:
+        g_linesY_ = data.getInt16(pos, true);
+        pos += 2;
+        g_linesX_ = data.getInt16(pos, true);
+        pos += 2;
+        if (!g_ready) {
+          g_ready = true;
+          g_linesX = g_linesY_;
+          g_linesY = g_linesX_;
+        }
+        break;
+      case 32:
+        g_playerCellIds.push(data.getUint32(pos, true));
+        pos += 4;
+        break;
+      case 49:
+        if (null != g_scorePartitions) {
+          break;
+        }
+        var num = data.getUint32(pos, true);
+        var pos = pos + 4;
+        g_scoreEntries = [];
+        for (var i = 0; i < num; ++i) {
+          var id = data.getUint32(pos, true);
+          var pos = pos + 4;
+          g_scoreEntries.push({
+            id: id,
+            name: __unmatched_190()
+          });
+        }
+        UpdateLeaderboard();
+        break;
+      case 50:
+        g_scorePartitions = [];
+        num = data.getUint32(pos, true);
+        pos += 4;
+        for (i = 0; i < num; ++i) {
+          g_scorePartitions.push(data.getFloat32(pos, true));
+          pos += 4;
+        }
+        UpdateLeaderboard();
+        break;
+      case 64:
+        g_minX = data.getFloat64(pos, true);
+        pos += 8;
+        g_minY = data.getFloat64(pos, true);
+        pos += 8;
+        g_maxX = data.getFloat64(pos, true);
+        pos += 8;
+        g_maxY = data.getFloat64(pos, true);
+        pos += 8;
+        g_viewX_ = (g_maxX + g_minX) / 2;
+        g_viewY_ = (g_maxY + g_minY) / 2;
+        g_scale_ = 1;
+        if (0 == g_playerCells.length) {
+          g_viewX = g_viewX_;
+          g_viewY = g_viewY_;
+          g_scale = g_scale_;
+        }
+        break;
+      case 81:
+        var x = data.getUint32(pos, true);
+        var pos = pos + 4;
+        var __unmatched_196 = data.getUint32(pos, true);
+        var pos = pos + 4;
+        var __unmatched_197 = data.getUint32(pos, true);
+        var pos = pos + 4;
+        setTimeout(function() {
+          __unmatched_43({
+            e: x,
+            f: __unmatched_196,
+            d: __unmatched_197
+          });
+        }, 1200);
+    }
+  }
+  function ParseCellUpdates(data, pos) {
+    function __unmatched_202() {
+      for (var string = '';;) {
+        var id = data.getUint16(pos, true);
+        pos += 2;
+        if (0 == id) {
+          break;
+        }
+        string += String.fromCharCode(id);
+      }
+      return string;
+    }
+    function __unmatched_203() {
+      for (var __unmatched_218 = '';;) {
+        var r = data.getUint8(pos++);
+        if (0 == r) {
+          break;
+        }
+        __unmatched_218 += String.fromCharCode(r);
+      }
+      return __unmatched_218;
+    }
+    __unmatched_107 = g_time = Date.now();
+    if (!g_connectSuccessful) {
+      g_connectSuccessful = true;
+      __unmatched_24();
+    }
+    __unmatched_88 = false;
+    var num = data.getUint16(pos, true);
+    pos += 2;
+    for (var i = 0; i < num; ++i) {
+      var cellA = g_cellsById[data.getUint32(pos, true)];
+      var cellB = g_cellsById[data.getUint32(pos + 4, true)];
+      pos += 8;
+      if (cellA && cellB) {
+        cellB.X();
+        cellB.s = cellB.x;
+        cellB.t = cellB.y;
+        cellB.r = cellB.size;
+        cellB.J = cellA.x;
+        cellB.K = cellA.y;
+        cellB.q = cellB.size;
+        cellB.Q = g_time;
+        __unmatched_49(cellA, cellB);
+      }
+    }
+    for (i = 0;;) {
+      num = data.getUint32(pos, true);
+      pos += 4;
+      if (0 == num) {
+        break;
+      }
+      ++i;
+      var size;
+      var cellA = data.getInt32(pos, true);
+      pos += 4;
+      cellB = data.getInt32(pos, true);
+      pos += 4;
+      size = data.getInt16(pos, true);
+      pos += 2;
+      var flags = data.getUint8(pos++);
+      var y = data.getUint8(pos++);
+      var b = data.getUint8(pos++);
+      var y = __unmatched_40(flags << 16 | y << 8 | b);
+      var b = data.getUint8(pos++);
+      var isVirus = !!(b & 1);
+      var isAgitated = !!(b & 16);
+      var __unmatched_214 = null;
+      if (b & 2) {
+        pos += 4 + data.getUint32(pos, true);
+      }
+      if (b & 4) {
+        __unmatched_214 = __unmatched_203();
+      }
+      var name = __unmatched_202();
+      var flags = null;
+      if (g_cellsById.hasOwnProperty(num)) {
+        flags = g_cellsById[num];
+        flags.P();
+        flags.s = flags.x;
+        flags.t = flags.y;
+        flags.r = flags.size;
+        flags.color = y;
+      } else {
+        flags = new Cell(num, cellA, cellB, size, y, name);
+        g_cells.push(flags);
+        g_cellsById[num] = flags;
+        flags.ta = cellA;
+        flags.ua = cellB;
+      }
+      flags.h = isVirus;
+      flags.n = isAgitated;
+      flags.J = cellA;
+      flags.K = cellB;
+      flags.q = size;
+      flags.Q = g_time;
+      flags.ba = b;
+      flags.fa = __unmatched_214;
+      if (name) {
+        flags.B(name);
+      }
+      if (-1 != g_playerCellIds.indexOf(num) && -1 == g_playerCells.indexOf(flags)) {
+        g_playerCells.push(flags);
+        if (1 == g_playerCells.length) {
+          g_viewX = flags.x;
+          g_viewY = flags.y;
+          __unmatched_136();
+          document.getElementById('overlays').style.display = 'none';
+          cached = [];
+          __unmatched_139 = 0;
+          __unmatched_140 = g_playerCells[0].color;
+          __unmatched_142 = true;
+          __unmatched_143 = Date.now();
+          g_mode = __unmatched_146 = __unmatched_145 = 0;
+        }
+      }
+    }
+    cellA = data.getUint32(pos, true);
+    pos += 4;
+    for (i = 0; i < cellA; i++) {
+      num = data.getUint32(pos, true);
+      pos += 4;
+      flags = g_cellsById[num];
+      if (null != flags) {
+        flags.X();
+      }
+    }
+    if (__unmatched_88 && 0 == g_playerCells.length) {
+      __unmatched_144 = Date.now();
+      __unmatched_142 = false;
+      if (!(g_playerCellDestroyed || __unmatched_141)) {
+        if (__unmatched_148) {
+          __unmatched_13(window.ab);
+          ShowOverlay();
+          __unmatched_141 = true;
+          $('#overlays').fadeIn(3000);
+          $('#stats').show();
+        } else {
+          __unmatched_10(3000);
+        }
+      }
+    }
+  }
+  function __unmatched_24() {
+    $('#connecting').hide();
+    SendNick();
+    if (__unmatched_121) {
+      __unmatched_121();
+      __unmatched_121 = null;
+    }
+    if (null != __unmatched_123) {
+      clearTimeout(__unmatched_123);
+    }
+    __unmatched_123 = setTimeout(function() {
+      if (window.ga) {
+        ++__unmatched_124;
+        window.ga('set', 'dimension2', __unmatched_124);
+      }
+    }, 10000);
+  }
+  function SendPos() {
+    if (IsConnected()) {
+      var deltaY = g_mouseX - g_protocol / 2;
+      var delta = g_mouseY - __unmatched_60 / 2;
+      if (!(64 > deltaY * deltaY + delta * delta || 0.01 > Math.abs(g_lastMoveY - g_moveX) && 0.01 > Math.abs(g_lastMoveX - g_moveY))) {
+        g_lastMoveY = g_moveX;
+        g_lastMoveX = g_moveY;
+        deltaY = GetBuffer(21);
+        deltaY.setUint8(0, 16);
+        deltaY.setFloat64(1, g_moveX, true);
+        deltaY.setFloat64(9, g_moveY, true);
+        deltaY.setUint32(17, 0, true);
+        SendBuffer(deltaY);
+      }
+    }
+  }
+  function SendNick() {
+    if (IsConnected() && g_connectSuccessful && null != g_nick) {
+      var data = GetBuffer(1 + 2 * g_nick.length);
+      data.setUint8(0, 0);
+      for (var i = 0; i < g_nick.length; ++i) {
+        data.setUint16(1 + 2 * i, g_nick.charCodeAt(i), true);
+      }
+      SendBuffer(data);
+      g_nick = null;
+    }
+  }
+  function IsConnected() {
+    return null != points && points.readyState == points.OPEN;
+  }
+  function SendCmd(cmd) {
+    if (IsConnected()) {
+      var data = GetBuffer(1);
+      data.setUint8(0, cmd);
+      SendBuffer(data);
+    }
+  }
+  function RefreshAds() {
+    if (IsConnected() && null != __unmatched_108) {
+      var __unmatched_226 = GetBuffer(1 + __unmatched_108.length);
+      __unmatched_226.setUint8(0, 81);
+      for (var y = 0; y < __unmatched_108.length; ++y) {
+        __unmatched_226.setUint8(y + 1, __unmatched_108.charCodeAt(y));
+      }
+      SendBuffer(__unmatched_226);
+    }
+  }
+  function ResizeHandler() {
+    g_protocol = window.innerWidth;
+    __unmatched_60 = window.innerHeight;
+    g_canvas_.width = g_canvas.width = g_protocol;
+    g_canvas_.height = g_canvas.height = __unmatched_60;
+    var $dialog = $('#helloContainer');
+    $dialog.css('transform', 'none');
+    var dialogHeight = $dialog.height();
+    var height = window.innerHeight;
+    if (dialogHeight > height / 1.1) {
+      $dialog.css('transform', 'translate(-50%, -50%) scale(' + height / dialogHeight / 1.1 + ')');
+    } else {
+      $dialog.css('transform', 'translate(-50%, -50%)');
+    }
+    GetScore();
+  }
+  function ScaleModifier() {
+    var scale;
+    scale = 1 * Math.max(__unmatched_60 / 1080, g_protocol / 1920);
+    return scale *= g_zoom;
+  }
+  function __unmatched_32() {
+    if (0 != g_playerCells.length) {
+      for (var scale = 0, i = 0; i < g_playerCells.length; i++) {
+        scale += g_playerCells[i].size;
+      }
+      scale = Math.pow(Math.min(64 / scale, 1), 0.4) * ScaleModifier();
+      g_scale = (9 * g_scale + scale) / 10;
+    }
+  }
+  function GetScore() {
+    var x;
+    var time = Date.now();
+    ++__unmatched_75;
+    g_time = time;
+    if (0 < g_playerCells.length) {
+      __unmatched_32();
+      for (var y = x = 0, i = 0; i < g_playerCells.length; i++) {
+        g_playerCells[i].P();
+        x += g_playerCells[i].x / g_playerCells.length;
+        y += g_playerCells[i].y / g_playerCells.length;
+      }
+      g_viewX_ = x;
+      g_viewY_ = y;
+      g_scale_ = g_scale;
+      g_viewX = (g_viewX + x) / 2;
+      g_viewY = (g_viewY + y) / 2;
+    } else {
+      g_viewX = (29 * g_viewX + g_viewX_) / 30;
+      g_viewY = (29 * g_viewY + g_viewY_) / 30;
+      g_scale = (9 * g_scale + g_scale_ * ScaleModifier()) / 10;
+    }
+    UpdateTree();
+    UpdatePos();
+    if (!g_showTrails) {
+      g_context.clearRect(0, 0, g_protocol, __unmatched_60);
+    }
+    if (g_showTrails) {
+      g_context.fillStyle = g_showMass ? '#111111' : '#F2FBFF';
+      g_context.globalAlpha = 0.05;
+      g_context.fillRect(0, 0, g_protocol, __unmatched_60);
+      g_context.globalAlpha = 1;
+    } else {
+      DrawGrid();
+    }
+    g_cells.sort(function(A, B) {
+      return A.size == B.size ? A.id - B.id : A.size - B.size;
+    });
+    g_context.save();
+    g_context.translate(g_protocol / 2, __unmatched_60 / 2);
+    g_context.scale(g_scale, g_scale);
+    g_context.translate(-g_viewX, -g_viewY);
+    drawBorders();
+    drawLogo();
+    myMass = Math.min.apply(null, g_playerCells.map(function(r) {
+        return r.N();
+    }))
+
+    for (i = 0; i < g_destroyedCells.length; i++) {
+      g_destroyedCells[i].w(g_context);
+    }
+    for (i = 0; i < g_cells.length; i++) {
+      g_cells[i].w(g_context);
+    }
+    if (g_ready) {
+      g_linesX = (3 * g_linesX + g_linesY_) / 4;
+      g_linesY = (3 * g_linesY + g_linesX_) / 4;
+      g_context.save();
+      g_context.strokeStyle = '#FFAAAA';
+      g_context.lineWidth = 10;
+      g_context.lineCap = 'round';
+      g_context.lineJoin = 'round';
+      g_context.globalAlpha = 0.5;
+      g_context.beginPath();
+      for (i = 0; i < g_playerCells.length; i++) {
+        g_context.moveTo(g_playerCells[i].x, g_playerCells[i].y);
+        g_context.lineTo(g_linesX, g_linesY);
+      }
+      g_context.stroke();
+      g_context.restore();
+    }
+    g_context.restore();
+    if (g_leaderboardCanvas && g_leaderboardCanvas.width) {
+      g_context.drawImage(g_leaderboardCanvas, g_protocol - g_leaderboardCanvas.width - 10, 10);
+    }
+    g_maxScore = Math.max(g_maxScore, __unmatched_36());
+    if (0 != g_maxScore) {
+      if (null == g_cachedScore) {
+        g_cachedScore = new CachedCanvas(24, '#FFFFFF');
+      }
+      g_cachedScore.C(__unmatched_14('score') + ': ' + ~~(g_maxScore / 100));
+      y = g_cachedScore.L();
+      x = y.width;
+      g_context.globalAlpha = 0.2;
+      g_context.fillStyle = '#000000';
+      g_context.fillRect(10, __unmatched_60 - 10 - 24 - 10, x + 10, 34);
+      g_context.globalAlpha = 1;
+      g_context.drawImage(y, 15, __unmatched_60 - 10 - 24 - 5);
+    }
+    DrawSplitImage();
+    time = Date.now() - time;
+    if (time > 1000 / 60) {
+      g_pointNumScale -= 0.01;
+    } else if (time < 1000 / 65) {
+      g_pointNumScale += 0.01;
+    }
+    if (0.4 > g_pointNumScale) {
+      g_pointNumScale = 0.4;
+    }
+    if (1 < g_pointNumScale) {
+      g_pointNumScale = 1;
+    }
+    time = g_time - __unmatched_77;
+    if (!IsConnected() || g_playerCellDestroyed || __unmatched_141) {
+      qkeyDown += time / 2000;
+      if (1 < qkeyDown) {
+        qkeyDown = 1;
+      }
+    } else {
+      qkeyDown -= time / 300;
+      if (0 > qkeyDown) {
+        qkeyDown = 0;
+      }
+    }
+    if (0 < qkeyDown) {
+      g_context.fillStyle = '#000000';
+      g_context.globalAlpha = 0.5 * qkeyDown;
+      g_context.fillRect(0, 0, g_protocol, __unmatched_60);
+      g_context.globalAlpha = 1;
+    }
+    __unmatched_77 = g_time;
+  }
+  function DrawGrid() {
+    g_context.fillStyle = g_showMass ? '#111111' : '#F2FBFF';
+    g_context.fillRect(0, 0, g_protocol, __unmatched_60);
+    g_context.save();
+    g_context.strokeStyle = g_showMass ? '#AAAAAA' : '#000000';
+    g_context.globalAlpha = 0.2 * g_scale;
+    for (var width = g_protocol / g_scale, height = __unmatched_60 / g_scale, g_width = (-g_viewX + width / 2) % 50; g_width < width; g_width += 50) {
+      g_context.beginPath();
+      g_context.moveTo(g_width * g_scale - 0.5, 0);
+      g_context.lineTo(g_width * g_scale - 0.5, height * g_scale);
+      g_context.stroke();
+    }
+    for (g_width = (-g_viewY + height / 2) % 50; g_width < height; g_width += 50) {
+      g_context.beginPath();
+      g_context.moveTo(0, g_width * g_scale - 0.5);
+      g_context.lineTo(width * g_scale, g_width * g_scale - 0.5);
+      g_context.stroke();
+    }
+    g_context.restore();
+  }
+  function DrawSplitImage() {
+    if (g_touchCapable && g_splitImage.width) {
+      var size = g_protocol / 5;
+      g_context.drawImage(g_splitImage, 5, 5, size, size);
+    }
+  }
+  function __unmatched_36() {
+    for (var score = 0, i = 0; i < g_playerCells.length; i++) {
+      score += g_playerCells[i].q * g_playerCells[i].q;
+    }
+    return score;
+  }
+  function UpdateLeaderboard() {
+    g_leaderboardCanvas = null;
+    if (null != g_scorePartitions || 0 != g_scoreEntries.length) {
+      if (null != g_scorePartitions || g_showNames) {
+        g_leaderboardCanvas = document.createElement('canvas');
+        var context = g_leaderboardCanvas.getContext('2d');
+        var height = 60;
+        var height = null == g_scorePartitions ? height + 24 * g_scoreEntries.length : height + 180;
+        var scale = Math.min(200, 0.3 * g_protocol) / 200;
+        g_leaderboardCanvas.width = 200 * scale;
+        g_leaderboardCanvas.height = height * scale;
+        context.scale(scale, scale);
+        context.globalAlpha = 0.4;
+        context.fillStyle = '#000000';
+        context.fillRect(0, 0, 200, height);
+        context.globalAlpha = 1;
+        context.fillStyle = '#FFFFFF';
+        scale = null;
+        scale = __unmatched_14('leaderboard');
+        context.font = '30px Ubuntu';
+        context.fillText(scale, 100 - context.measureText(scale).width / 2, 40);
+        if (null == g_scorePartitions) {
+          for (context.font = '20px Ubuntu', height = 0; height < g_scoreEntries.length; ++height) {
+            scale = g_scoreEntries[height].name || __unmatched_14('unnamed_cell');
+            if (!g_showNames) {
+              scale = __unmatched_14('unnamed_cell');
+            }
+            if (-1 != g_playerCellIds.indexOf(g_scoreEntries[height].id)) {
+              if (g_playerCells[0].name) {
+                scale = g_playerCells[0].name;
+              }
+              context.fillStyle = '#FFAAAA';
+            } else {
+              context.fillStyle = '#FFFFFF';
+            }
+            scale = height + 1 + '. ' + scale;
+            context.fillText(scale, 100 - context.measureText(scale).width / 2, 70 + 24 * height);
+          }
+        } else {
+          for (height = scale = 0; height < g_scorePartitions.length; ++height) {
+            var end = scale + g_scorePartitions[height] * Math.PI * 2;
+            context.fillStyle = g_teamColors[height + 1];
+            context.beginPath();
+            context.moveTo(100, 140);
+            context.arc(100, 140, 80, scale, end, false);
+            context.fill();
+            scale = end;
+          }
+        }
+      }
+    }
+  }
+  function __unmatched_38(__unmatched_250, __unmatched_251, __unmatched_252, __unmatched_253, __unmatched_254) {
+    this.V = __unmatched_250;
+    this.x = __unmatched_251;
+    this.y = __unmatched_252;
+    this.i = __unmatched_253;
+    this.b = __unmatched_254;
+  }
+  function Cell(id, x, y, size, color, name) {
+    this.id = id;
+    this.s = this.x = x;
+    this.t = this.y = y;
+    this.r = this.size = size;
+    this.color = color;
+    this.a = [];
+    this.W();
+    this.B(name);
+  }
+  function __unmatched_40(__unmatched_261) {
+    for (__unmatched_261 = __unmatched_261.toString(16); 6 > __unmatched_261.length;) {
+      __unmatched_261 = '0' + __unmatched_261;
+    }
+    return '#' + __unmatched_261;
+  }
+  function drawBorders() {
+      g_context.save()
+      g_context.beginPath();
+      g_context.lineWidth = 1;
+      g_context.strokeStyle = "#F87B32";
+      g_context.moveTo(getMapStartX(), getMapStartY());
+      g_context.lineTo(getMapStartX(), getMapEndY());
+      g_context.stroke();
+      g_context.moveTo(getMapStartX(), getMapStartY());
+      g_context.lineTo(getMapEndX(), getMapStartY());
+      g_context.stroke();
+      g_context.moveTo(getMapEndX(), getMapStartY());
+      g_context.lineTo(getMapEndX(), getMapEndY());
+      g_context.stroke();
+      g_context.moveTo(getMapStartX(), getMapEndY());
+      g_context.lineTo(getMapEndX(), getMapEndY());
+      g_context.stroke();
+      g_context.restore();
+  }
+  function drawLogo(){
+    var logoimage = new Image();
+    logoimage.src = "img/split.png";
+
+    var width = this.j / 2;
+    var dim = width / 2;
+    g_context.save();
+    g_context.beginPath();
+    g_context.strokeStyle = "#F87B32";
+    g_context.moveTo(getMapStartX()/2, getMapStartX()/2);
+    g_context.lineTo(getMapStartX()/2, getMapStartX()/2);
+    g_context.stroke();
+    g_context.restore();
+  }
+  function CachedCanvas(size, color, stroke, strokeColor) {
+    if (size) {
+      this.u = size;
+    }
+    if (color) {
+      this.S = color;
+    }
+    this.U = !!stroke;
+    if (strokeColor) {
+      this.v = strokeColor;
+    }
+  }
+  function __unmatched_42(__unmatched_266) {
+    for (var size_ = __unmatched_266.length, __unmatched_268, __unmatched_269; 0 < size_;) {
+      __unmatched_269 = Math.floor(Math.random() * size_);
+      size_--;
+      __unmatched_268 = __unmatched_266[size_];
+      __unmatched_266[size_] = __unmatched_266[__unmatched_269];
+      __unmatched_266[__unmatched_269] = __unmatched_268;
+    }
+  }
+  function __unmatched_43(g_socket, __unmatched_271) {
+    var noClip = '1' == $('#helloContainer').attr('data-has-account-data');
+    $('#helloContainer').attr('data-has-account-data', '1');
+    if (null == __unmatched_271 && window.localStorage.loginCache) {
+      var rand = JSON.parse(window.localStorage.loginCache);
+      rand.f = g_socket.f;
+      rand.d = g_socket.d;
+      rand.e = g_socket.e;
+      window.localStorage.loginCache = JSON.stringify(rand);
+    }
+    if (noClip) {
+      var __unmatched_274 = +$('.agario-exp-bar .progress-bar-text').first().text().split('/')[0];
+      var noClip = +$('.agario-exp-bar .progress-bar-text').first().text().split('/')[1].split(' ')[0];
+      var rand = $('.agario-profile-panel .progress-bar-star').first().text();
+      if (rand != g_socket.e) {
+        __unmatched_43({
+          f: noClip,
+          d: noClip,
+          e: rand
+        }, function() {
+          $('.agario-profile-panel .progress-bar-star').text(g_socket.e);
+          $('.agario-exp-bar .progress-bar').css('width', '100%');
+          $('.progress-bar-star').addClass('animated tada').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $('.progress-bar-star').removeClass('animated tada');
+          });
+          setTimeout(function() {
+            $('.agario-exp-bar .progress-bar-text').text(g_socket.d + '/' + g_socket.d + ' XP');
+            __unmatched_43({
+              f: 0,
+              d: g_socket.d,
+              e: g_socket.e
+            }, function() {
+              __unmatched_43(g_socket, __unmatched_271);
+            });
+          }, 1000);
+        });
+      } else {
+        var __unmatched_275 = Date.now();
+        var name = function() {
+          var deltaX;
+          deltaX = (Date.now() - __unmatched_275) / 1000;
+          deltaX = 0 > deltaX ? 0 : 1 < deltaX ? 1 : deltaX;
+          deltaX = deltaX * deltaX * (3 - 2 * deltaX);
+          $('.agario-exp-bar .progress-bar-text').text(~~(__unmatched_274 + (g_socket.f - __unmatched_274) * deltaX) + '/' + g_socket.d + ' XP');
+          $('.agario-exp-bar .progress-bar').css('width', (88 * (__unmatched_274 + (g_socket.f - __unmatched_274) * deltaX) / g_socket.d).toFixed(2) + '%');
+          if (1 > deltaX) {
+            window.requestAnimationFrame(name);
+          } else if (__unmatched_271) {
+            __unmatched_271();
+          }
+        };
+        window.requestAnimationFrame(name);
+      }
+    } else {
+      $('.agario-profile-panel .progress-bar-star').text(g_socket.e);
+      $('.agario-exp-bar .progress-bar-text').text(g_socket.f + '/' + g_socket.d + ' XP');
+      $('.agario-exp-bar .progress-bar').css('width', (88 * g_socket.f / g_socket.d).toFixed(2) + '%');
+      if (__unmatched_271) {
+        __unmatched_271();
+      }
+    }
+  }
+  function __unmatched_44(__unmatched_278) {
+    if ('string' == typeof __unmatched_278) {
+      __unmatched_278 = JSON.parse(__unmatched_278);
+    }
+    if (Date.now() + 1800000 > __unmatched_278.ka) {
+      $('#helloContainer').attr('data-logged-in', '0');
+    } else {
+      window.localStorage.loginCache = JSON.stringify(__unmatched_278);
+      __unmatched_108 = __unmatched_278.ha;
+      $('.agario-profile-name').text(__unmatched_278.name);
+      RefreshAds();
+      __unmatched_43({
+        f: __unmatched_278.f,
+        d: __unmatched_278.d,
+        e: __unmatched_278.e
+      });
+      $('#helloContainer').attr('data-logged-in', '1');
+    }
+  }
+  function __unmatched_45(data) {
+    data = data.split('\n');
+    __unmatched_44({
+      name: data[0],
+      sa: data[1],
+      ha: data[2],
+      ka: 1000 * +data[3],
+      e: +data[4],
+      f: +data[5],
+      d: +data[6]
+    });
+  }
+  function UpdateScale(__unmatched_280) {
+    if ('connected' == __unmatched_280.status) {
+      var x = __unmatched_280.authResponse.accessToken;
+      window.FB.api('/me/picture?width=180&height=180', function(__unmatched_282) {
+        window.localStorage.fbPictureCache = __unmatched_282.data.url;
+        $('.agario-profile-picture').attr('src', __unmatched_282.data.url);
+      });
+      $('#helloContainer').attr('data-logged-in', '1');
+      if (null != __unmatched_108) {
+        $.ajax('https://m.agar.io/checkToken', {
+          error: function() {
+            __unmatched_108 = null;
+            UpdateScale(__unmatched_280);
+          },
+          success: function(__unmatched_283) {
+            __unmatched_283 = __unmatched_283.split('\n');
+            __unmatched_43({
+              e: +__unmatched_283[0],
+              f: +__unmatched_283[1],
+              d: +__unmatched_283[2]
+            });
+          },
+          dataType: 'text',
+          method: 'POST',
+          cache: false,
+          crossDomain: true,
+          data: __unmatched_108
+        });
+      } else {
+        $.ajax('https://m.agar.io/facebookLogin', {
+          error: function() {
+            __unmatched_108 = null;
+            $('#helloContainer').attr('data-logged-in', '0');
+          },
+          success: __unmatched_45,
+          dataType: 'text',
+          method: 'POST',
+          cache: false,
+          crossDomain: true,
+          data: x
+        });
+      }
+    }
+  }
+  function RenderLoop(x) {
+    Render(':party');
+    $('#helloContainer').attr('data-party-state', '4');
+    x = decodeURIComponent(x).replace(/.*#/gim, '');
+    __unmatched_48('#' + window.encodeURIComponent(x));
+    $.ajax('https://m.agar.io/getToken', {
+      error: function() {
+        $('#helloContainer').attr('data-party-state', '6');
+      },
+      success: function(quick) {
+        quick = quick.split('\n');
+        $('.partyToken').val('agar.io/#' + window.encodeURIComponent(x));
+        $('#helloContainer').attr('data-party-state', '5');
+        Render(':party');
+        Connect('ws://' + quick[0], x);
+      },
+      dataType: 'text',
+      method: 'POST',
+      cache: false,
+      crossDomain: true,
+      data: x
+    });
+  }
+  function __unmatched_48(__unmatched_286) {
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, window.document.title, __unmatched_286);
+    }
+  }
+  function __unmatched_49(__unmatched_287, __unmatched_288) {
+    var playerOwned = -1 != g_playerCellIds.indexOf(__unmatched_287.id);
+    var __unmatched_290 = -1 != g_playerCellIds.indexOf(__unmatched_288.id);
+    var __unmatched_291 = 30 > __unmatched_288.size;
+    if (playerOwned && __unmatched_291) {
+      ++__unmatched_139;
+    }
+    if (!(__unmatched_291 || !playerOwned || __unmatched_290)) {
+      ++__unmatched_146;
+    }
+  }
+  function __unmatched_50(__unmatched_292) {
+    __unmatched_292 = ~~__unmatched_292;
+    var color = (__unmatched_292 % 60).toString();
+    __unmatched_292 = (~~(__unmatched_292 / 60)).toString();
+    if (2 > color.length) {
+      color = '0' + color;
+    }
+    return __unmatched_292 + ':' + color;
+  }
+  function __unmatched_51() {
+    if (null == g_scoreEntries) {
+      return 0;
+    }
+    for (var i = 0; i < g_scoreEntries.length; ++i) {
+      if (-1 != g_playerCellIds.indexOf(g_scoreEntries[i].id)) {
+        return i + 1;
+      }
+    }
+    return 0;
+  }
+  function ShowOverlay() {
+    $('.stats-food-eaten').text(__unmatched_139);
+    $('.stats-time-alive').text(__unmatched_50((__unmatched_144 - __unmatched_143) / 1000));
+    $('.stats-leaderboard-time').text(__unmatched_50(__unmatched_145));
+    $('.stats-highest-mass').text(~~(g_maxScore / 100));
+    $('.stats-cells-eaten').text(__unmatched_146);
+    $('.stats-top-position').text(0 == g_mode ? ':(' : g_mode);
+    var g_height = document.getElementById('statsGraph');
+    if (g_height) {
+      var pointsAcc = g_height.getContext('2d');
+      var scale = g_height.width;
+      var g_height = g_height.height;
+      pointsAcc.clearRect(0, 0, scale, g_height);
+      if (2 < cached.length) {
+        for (var __unmatched_298 = 200, i = 0; i < cached.length; i++) {
+          __unmatched_298 = Math.max(cached[i], __unmatched_298);
+        }
+        pointsAcc.lineWidth = 3;
+        pointsAcc.lineCap = 'round';
+        pointsAcc.lineJoin = 'round';
+        pointsAcc.strokeStyle = __unmatched_140;
+        pointsAcc.fillStyle = __unmatched_140;
+        pointsAcc.beginPath();
+        pointsAcc.moveTo(0, g_height - cached[0] / __unmatched_298 * (g_height - 10) + 10);
+        for (i = 1; i < cached.length; i += Math.max(~~(cached.length / scale), 1)) {
+          for (var __unmatched_300 = i / (cached.length - 1) * scale, __unmatched_301 = [], __unmatched_302 = -20; 20 >= __unmatched_302; ++__unmatched_302) {
+            if (!(0 > i + __unmatched_302 || i + __unmatched_302 >= cached.length)) {
+              __unmatched_301.push(cached[i + __unmatched_302]);
+            }
+          }
+          __unmatched_301 = __unmatched_301.reduce(function(__unmatched_303, __unmatched_304) {
+              return __unmatched_303 + __unmatched_304;
+            }) / __unmatched_301.length / __unmatched_298;
+          pointsAcc.lineTo(__unmatched_300, g_height - __unmatched_301 * (g_height - 10) + 10);
+        }
+        pointsAcc.stroke();
+        pointsAcc.globalAlpha = 0.5;
+        pointsAcc.lineTo(scale, g_height);
+        pointsAcc.lineTo(0, g_height);
+        pointsAcc.fill();
+        pointsAcc.globalAlpha = 1;
+      }
+    }
+  }
+  if (!window.agarioNoInit) {
+    var __unmatched_53 = window.location.protocol;
+    var g_secure = 'https:' == __unmatched_53;
+    if (g_secure && -1 == window.location.search.indexOf('fb')) {
+      window.location.href = 'http://agar.io/';
+    } else {
+      var items = window.navigator.userAgent;
+      if (-1 != items.indexOf('Android')) {
+        if (window.ga) {
+          window.ga('send', 'event', 'MobileRedirect', 'PlayStore');
+        }
+        setTimeout(function() {
+          window.location.href = 'https://play.google.com/store/apps/details?id=com.miniclip.agar.io';
+        }, 1000);
+      } else if (-1 != items.indexOf('iPhone') || -1 != items.indexOf('iPad') || -1 != items.indexOf('iPod')) {
+        if (window.ga) {
+          window.ga('send', 'event', 'MobileRedirect', 'AppStore');
+        }
+        setTimeout(function() {
+          window.location.href = 'https://itunes.apple.com/app/agar.io/id995999703?mt=8&at=1l3vajp';
+        }, 1000);
+      } else {
+        var g_canvas_;
+        var g_context;
+        var g_canvas;
+        var g_protocol;
+        var __unmatched_60;
+        var g_pointTree = null;
+        var points = null;
+        var g_viewX = 0;
+        var g_viewY = 0;
+        var g_playerCellIds = [];
+        var g_playerCells = [];
+        var g_cellsById = {};
+        var g_cells = [];
+        var g_destroyedCells = [];
+        var g_scoreEntries = [];
+        var g_mouseX = 0;
+        var g_mouseY = 0;
+        var g_moveX = -1;
+        var g_moveY = -1;
+        var __unmatched_75 = 0;
+        var g_time = 0;
+        var __unmatched_77 = 0;
+        var g_nick = null;
+        var g_minX = 0;
+        var g_minY = 0;
+        var g_maxX = 10000;
+        var g_maxY = 10000;
+        var g_scale = 1;
+        var g_region = null;
+        var g_showSkins = true;
+        var g_showNames = true;
+        var g_noColors = false;
+        var __unmatched_88 = false;
+        var g_maxScore = 0;
+        var g_showMass = false;
+        var g_darkTheme = true;
+        var g_viewX_ = g_viewX = ~~((g_minX + g_maxX) / 2);
+        var g_viewY_ = g_viewY = ~~((g_minY + g_maxY) / 2);
+        var g_scale_ = 1;
+        var __unmatched_95 = '';
+        var g_scorePartitions = null;
+        var g_drawLines = false;
+        var g_ready = false;
+        var g_linesY_ = 0;
+        var g_linesX_ = 0;
+        var g_linesX = 0;
+        var g_linesY = 0;
+        var g_ABGroup = 0;
+        var g_teamColors = [
+          '#333333',
+          '#FF3333',
+          '#33FF33',
+          '#3333FF'
+        ];
+        var g_showTrails = false;
+        var g_connectSuccessful = false;
+        var __unmatched_107 = 0;
+        var __unmatched_108 = null;
+        var g_zoom = 1;
+        var qkeyDown = 1;
+        var g_playerCellDestroyed = false;
+        var __unmatched_112 = 0;
+        var __unmatched_113 = {};
+        (function() {
+          var point = window.location.search;
+          if ('?' == point.charAt(0)) {
+            point = point.slice(1);
+          }
+          for (var point = point.split('&'), __unmatched_306 = 0; __unmatched_306 < point.length; __unmatched_306++) {
+            var parts = point[__unmatched_306].split('=');
+            __unmatched_113[parts[0]] = parts[1];
+          }
+        }());
+        var g_touchCapable = 'ontouchstart' in window && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
+        var g_splitImage = new Image();
+        g_splitImage.src = 'img/split.png';
+        var canvasTest = document.createElement('canvas');
+        if ('undefined' == typeof console || 'undefined' == typeof DataView || 'undefined' == typeof WebSocket || null == canvasTest || null == canvasTest.getContext || null == window.localStorage) {
+          alert('You browser does not support this game, we recommend you to use Firefox to play this');
+        } else {
+          var g_regionLabels = null;
+          window.setNick = function(val) {
+            HideOverlay();
+            g_nick = val;
+            SendNick();
+            g_maxScore = 0;
+          };
+          window.setRegion = SetRegion;
+          window.setSkins = function(val) {
+            g_showSkins = val;
+          };
+          window.setUnlimitedZoom = function(val) {
+            isUnlimitedZoom = val;
+            };
+          window.setNames = function(val) {
+            g_showNames = val;
+          };
+          window.setDarkTheme = function(val) {
+            g_showMass = val;
+          };
+          window.setColors = function(val) {
+            g_noColors = val;
+          };
+          window.setShowMass = function(val) {
+            g_darkTheme = val;
+          };
+          window.spectate = function(val) {
+            isSpectating = val
+            g_nick = null;
+            SendCmd(1);
+            HideOverlay();
+          };
+          window.setLargeBlobBorders = function(val) {
+            isLargeBlobBorders = val;
+          }
+          window.setLargeNames = function(val) {
+            isLargeNames = val;
+          }
+          window.setVirusTransparent = function(val){
+            isVirusTransparent = val;
+          }
+          window.getMapStartX = function() {
+            return g_minX;
+          }
+          window.getMapStartY = function() {
+            return g_minY;
+          }
+          window.getMapEndX = function() {
+            return g_maxX;
+          }
+          window.getMapEndY = function() {
+            return g_maxY;
+          }
+          window.setGameMode = function(val) {
+            if (val != __unmatched_95) {
+              if (':party' == __unmatched_95) {
+                $('#helloContainer').attr('data-party-state', '0');
+              }
+              Render(val);
+              if (':party' != val) {
+                Start();
+              }
+            }
+          };
+          window.setAcid = function(val) {
+            g_showTrails = val;
+          };
+          if (null != window.localStorage) {
+            if (null == window.localStorage.AB9) {
+              window.localStorage.AB9 = 0 + ~~(100 * Math.random());
+            }
+            g_ABGroup = +window.localStorage.AB9;
+            window.ABGroup = g_ABGroup;
+          }
+          $.get(__unmatched_53 + '//gc.agar.io', function(code) {
+            var __unmatched_317 = code.split(' ');
+            code = __unmatched_317[0];
+            __unmatched_317 = __unmatched_317[1] || '';
+            if (-1 == ['UA'].indexOf(code)) {
+              g_skinNamesA.push('ussr');
+            }
+            if (g_regionsByCC.hasOwnProperty(code)) {
+              if ('string' == typeof g_regionsByCC[code]) {
+                if (!g_region) {
+                  SetRegion(g_regionsByCC[code]);
+                } else if (g_regionsByCC[code].hasOwnProperty(__unmatched_317)) {
+                  if (!g_region) {
+                    SetRegion(g_regionsByCC[code][__unmatched_317]);
+                  }
+                }
+              }
+            }
+          }, 'text');
+          if (window.ga) {
+            window.ga('send', 'event', 'User-Agent', window.navigator.userAgent, {
+              nonInteraction: 1
+            });
+          }
+          var g_canRefreshAds = true;
+          var g_refreshAdsCooldown = 0;
+          var g_regionsByCC = {
+            AF: 'JP-Tokyo',
+            AX: 'EU-London',
+            AL: 'EU-London',
+            DZ: 'EU-London',
+            AS: 'SG-Singapore',
+            AD: 'EU-London',
+            AO: 'EU-London',
+            AI: 'US-Atlanta',
+            AG: 'US-Atlanta',
+            AR: 'BR-Brazil',
+            AM: 'JP-Tokyo',
+            AW: 'US-Atlanta',
+            AU: 'SG-Singapore',
+            AT: 'EU-London',
+            AZ: 'JP-Tokyo',
+            BS: 'US-Atlanta',
+            BH: 'JP-Tokyo',
+            BD: 'JP-Tokyo',
+            BB: 'US-Atlanta',
+            BY: 'EU-London',
+            BE: 'EU-London',
+            BZ: 'US-Atlanta',
+            BJ: 'EU-London',
+            BM: 'US-Atlanta',
+            BT: 'JP-Tokyo',
+            BO: 'BR-Brazil',
+            BQ: 'US-Atlanta',
+            BA: 'EU-London',
+            BW: 'EU-London',
+            BR: 'BR-Brazil',
+            IO: 'JP-Tokyo',
+            VG: 'US-Atlanta',
+            BN: 'JP-Tokyo',
+            BG: 'EU-London',
+            BF: 'EU-London',
+            BI: 'EU-London',
+            KH: 'JP-Tokyo',
+            CM: 'EU-London',
+            CA: 'US-Atlanta',
+            CV: 'EU-London',
+            KY: 'US-Atlanta',
+            CF: 'EU-London',
+            TD: 'EU-London',
+            CL: 'BR-Brazil',
+            CN: 'CN-China',
+            CX: 'JP-Tokyo',
+            CC: 'JP-Tokyo',
+            CO: 'BR-Brazil',
+            KM: 'EU-London',
+            CD: 'EU-London',
+            CG: 'EU-London',
+            CK: 'SG-Singapore',
+            CR: 'US-Atlanta',
+            CI: 'EU-London',
+            HR: 'EU-London',
+            CU: 'US-Atlanta',
+            CW: 'US-Atlanta',
+            CY: 'JP-Tokyo',
+            CZ: 'EU-London',
+            DK: 'EU-London',
+            DJ: 'EU-London',
+            DM: 'US-Atlanta',
+            DO: 'US-Atlanta',
+            EC: 'BR-Brazil',
+            EG: 'EU-London',
+            SV: 'US-Atlanta',
+            GQ: 'EU-London',
+            ER: 'EU-London',
+            EE: 'EU-London',
+            ET: 'EU-London',
+            FO: 'EU-London',
+            FK: 'BR-Brazil',
+            FJ: 'SG-Singapore',
+            FI: 'EU-London',
+            FR: 'EU-London',
+            GF: 'BR-Brazil',
+            PF: 'SG-Singapore',
+            GA: 'EU-London',
+            GM: 'EU-London',
+            GE: 'JP-Tokyo',
+            DE: 'EU-London',
+            GH: 'EU-London',
+            GI: 'EU-London',
+            GR: 'EU-London',
+            GL: 'US-Atlanta',
+            GD: 'US-Atlanta',
+            GP: 'US-Atlanta',
+            GU: 'SG-Singapore',
+            GT: 'US-Atlanta',
+            GG: 'EU-London',
+            GN: 'EU-London',
+            GW: 'EU-London',
+            GY: 'BR-Brazil',
+            HT: 'US-Atlanta',
+            VA: 'EU-London',
+            HN: 'US-Atlanta',
+            HK: 'JP-Tokyo',
+            HU: 'EU-London',
+            IS: 'EU-London',
+            IN: 'JP-Tokyo',
+            ID: 'JP-Tokyo',
+            IR: 'JP-Tokyo',
+            IQ: 'JP-Tokyo',
+            IE: 'EU-London',
+            IM: 'EU-London',
+            IL: 'JP-Tokyo',
+            IT: 'EU-London',
+            JM: 'US-Atlanta',
+            JP: 'JP-Tokyo',
+            JE: 'EU-London',
+            JO: 'JP-Tokyo',
+            KZ: 'JP-Tokyo',
+            KE: 'EU-London',
+            KI: 'SG-Singapore',
+            KP: 'JP-Tokyo',
+            KR: 'JP-Tokyo',
+            KW: 'JP-Tokyo',
+            KG: 'JP-Tokyo',
+            LA: 'JP-Tokyo',
+            LV: 'EU-London',
+            LB: 'JP-Tokyo',
+            LS: 'EU-London',
+            LR: 'EU-London',
+            LY: 'EU-London',
+            LI: 'EU-London',
+            LT: 'EU-London',
+            LU: 'EU-London',
+            MO: 'JP-Tokyo',
+            MK: 'EU-London',
+            MG: 'EU-London',
+            MW: 'EU-London',
+            MY: 'JP-Tokyo',
+            MV: 'JP-Tokyo',
+            ML: 'EU-London',
+            MT: 'EU-London',
+            MH: 'SG-Singapore',
+            MQ: 'US-Atlanta',
+            MR: 'EU-London',
+            MU: 'EU-London',
+            YT: 'EU-London',
+            MX: 'US-Atlanta',
+            FM: 'SG-Singapore',
+            MD: 'EU-London',
+            MC: 'EU-London',
+            MN: 'JP-Tokyo',
+            ME: 'EU-London',
+            MS: 'US-Atlanta',
+            MA: 'EU-London',
+            MZ: 'EU-London',
+            MM: 'JP-Tokyo',
+            NA: 'EU-London',
+            NR: 'SG-Singapore',
+            NP: 'JP-Tokyo',
+            NL: 'EU-London',
+            NC: 'SG-Singapore',
+            NZ: 'SG-Singapore',
+            NI: 'US-Atlanta',
+            NE: 'EU-London',
+            NG: 'EU-London',
+            NU: 'SG-Singapore',
+            NF: 'SG-Singapore',
+            MP: 'SG-Singapore',
+            NO: 'EU-London',
+            OM: 'JP-Tokyo',
+            PK: 'JP-Tokyo',
+            PW: 'SG-Singapore',
+            PS: 'JP-Tokyo',
+            PA: 'US-Atlanta',
+            PG: 'SG-Singapore',
+            PY: 'BR-Brazil',
+            PE: 'BR-Brazil',
+            PH: 'JP-Tokyo',
+            PN: 'SG-Singapore',
+            PL: 'EU-London',
+            PT: 'EU-London',
+            PR: 'US-Atlanta',
+            QA: 'JP-Tokyo',
+            RE: 'EU-London',
+            RO: 'EU-London',
+            RU: 'RU-Russia',
+            RW: 'EU-London',
+            BL: 'US-Atlanta',
+            SH: 'EU-London',
+            KN: 'US-Atlanta',
+            LC: 'US-Atlanta',
+            MF: 'US-Atlanta',
+            PM: 'US-Atlanta',
+            VC: 'US-Atlanta',
+            WS: 'SG-Singapore',
+            SM: 'EU-London',
+            ST: 'EU-London',
+            SA: 'EU-London',
+            SN: 'EU-London',
+            RS: 'EU-London',
+            SC: 'EU-London',
+            SL: 'EU-London',
+            SG: 'JP-Tokyo',
+            SX: 'US-Atlanta',
+            SK: 'EU-London',
+            SI: 'EU-London',
+            SB: 'SG-Singapore',
+            SO: 'EU-London',
+            ZA: 'EU-London',
+            SS: 'EU-London',
+            ES: 'EU-London',
+            LK: 'JP-Tokyo',
+            SD: 'EU-London',
+            SR: 'BR-Brazil',
+            SJ: 'EU-London',
+            SZ: 'EU-London',
+            SE: 'EU-London',
+            CH: 'EU-London',
+            SY: 'EU-London',
+            TW: 'JP-Tokyo',
+            TJ: 'JP-Tokyo',
+            TZ: 'EU-London',
+            TH: 'JP-Tokyo',
+            TL: 'JP-Tokyo',
+            TG: 'EU-London',
+            TK: 'SG-Singapore',
+            TO: 'SG-Singapore',
+            TT: 'US-Atlanta',
+            TN: 'EU-London',
+            TR: 'TK-Turkey',
+            TM: 'JP-Tokyo',
+            TC: 'US-Atlanta',
+            TV: 'SG-Singapore',
+            UG: 'EU-London',
+            UA: 'EU-London',
+            AE: 'EU-London',
+            GB: 'EU-London',
+            US: 'US-Atlanta',
+            UM: 'SG-Singapore',
+            VI: 'US-Atlanta',
+            UY: 'BR-Brazil',
+            UZ: 'JP-Tokyo',
+            VU: 'SG-Singapore',
+            VE: 'BR-Brazil',
+            VN: 'JP-Tokyo',
+            WF: 'SG-Singapore',
+            EH: 'EU-London',
+            YE: 'JP-Tokyo',
+            ZM: 'EU-London',
+            ZW: 'EU-London'
+          };
+          var __unmatched_121 = null;
+          window.connect = Connect;
+          var g_retryTimeout = 500;
+          var __unmatched_123 = null;
+          var __unmatched_124 = 0;
+          var g_lastMoveY = -1;
+          var g_lastMoveX = -1;
+          var g_leaderboardCanvas = null;
+          var g_pointNumScale = 1;
+          var g_cachedScore = null;
+          var __unmatched_130 = function() {
+            var sizeRatio = Date.now();
+            var __unmatched_319 = 1000 / 60;
+            return function() {
+              window.requestAnimationFrame(__unmatched_130);
+              var y = Date.now();
+              var step = y - sizeRatio;
+              if (step > __unmatched_319) {
+                sizeRatio = y - step % __unmatched_319;
+                if (!IsConnected() || 240 > Date.now() - __unmatched_107) {
+                  GetScore();
+                } else {
+                  console.warn('Skipping draw');
+                }
+                __unmatched_137();
+              }
+            };
+          }();
+          var g_skinCache = {};
+          var g_skinNamesA = 'poland;usa;china;russia;canada;australia;spain;brazil;germany;ukraine;france;sweden;chaplin;north korea;south korea;japan;united kingdom;earth;greece;latvia;lithuania;estonia;finland;norway;cia;maldivas;austria;nigeria;reddit;yaranaika;confederate;9gag;indiana;4chan;italy;bulgaria;tumblr;2ch.hk;hong kong;portugal;jamaica;german empire;mexico;sanik;switzerland;croatia;chile;indonesia;bangladesh;thailand;iran;iraq;peru;moon;botswana;bosnia;netherlands;european union;taiwan;pakistan;hungary;satanist;qing dynasty;matriarchy;patriarchy;feminism;ireland;texas;facepunch;prodota;cambodia;steam;piccolo;ea;india;kc;denmark;quebec;ayy lmao;sealand;bait;tsarist russia;origin;vinesauce;stalin;belgium;luxembourg;stussy;prussia;8ch;argentina;scotland;sir;romania;belarus;wojak;doge;nasa;byzantium;imperial japan;french kingdom;somalia;turkey;mars;pokerface;8;irs;receita federal;facebook;putin;merkel;tsipras;obama;kim jong-un;dilma;hollande'.split(';');
+          var __unmatched_133 = '8;nasa;putin;merkel;tsipras;obama;kim jong-un;dilma;hollande'.split(';');
+          var __unmatched_134 = {};
+          __unmatched_38.prototype = {
+            V: null,
+            x: 0,
+            y: 0,
+            i: 0,
+            b: 0
+          };
+          Cell.prototype = {
+            id: 0,
+            a: null,
+            name: null,
+            o: null,
+            O: null,
+            x: 0,
+            y: 0,
+            size: 0,
+            s: 0,
+            t: 0,
+            r: 0,
+            J: 0,
+            K: 0,
+            q: 0,
+            ba: 0,
+            Q: 0,
+            ja: 0,
+            G: false,
+            h: false,
+            n: false,
+            R: true,
+            Y: 0,
+            fa: null,
+            X: function() {
+              var i;
+              for (i = 0; i < g_cells.length; i++) {
+                if (g_cells[i] == this) {
+                  g_cells.splice(i, 1);
+                  break;
+                }
+              }
+              delete g_cellsById[this.id];
+              i = g_playerCells.indexOf(this);
+              if (-1 != i) {
+                __unmatched_88 = true;
+                g_playerCells.splice(i, 1);
+              }
+              i = g_playerCellIds.indexOf(this.id);
+              if (-1 != i) {
+                g_playerCellIds.splice(i, 1);
+              }
+              this.G = true;
+              if (0 < this.Y) {
+                g_destroyedCells.push(this);
+              }
+            },
+            l: function() {
+              if(isLargeNames) {
+                return 50 + 0.3 * this.size;
+              } else {
+              return Math.max(~~(0.3 * this.size), 24);
+              }
+            },
+            B: function(val) {
+              if (this.name = val) {
+                if (null == this.o) {
+                  this.o = new CachedCanvas(this.l(), '#FFFFFF', true, '#000000');
+                } else {
+                  this.o.M(this.l());
+                }
+                this.o.C(this.name);
+              }
+            },
+            W: function() {
+              for (var num = this.I(); this.a.length > num;) {
+                var i = ~~(Math.random() * this.a.length);
+                this.a.splice(i, 1);
+              }
+              for (0 == this.a.length && 0 < num && this.a.push(new __unmatched_38(this, this.x, this.y, this.size, Math.random() - 0.5)); this.a.length < num;) {
+                i = ~~(Math.random() * this.a.length);
+                i = this.a[i];
+                this.a.push(new __unmatched_38(this, i.x, i.y, i.i, i.b));
+              }
+            },
+            I: function() {
+              var num = 10;
+              if (20 > this.size) {
+                num = 0;
+              }
+              if (this.h) {
+                num = 30;
+              }
+              var size = this.size;
+              if (!this.h) {
+                size *= g_scale;
+              }
+              size *= g_pointNumScale;
+              if (this.ba & 32) {
+                size *= 0.25;
+              }
+              return ~~Math.max(size, num);
+            },
+            qa: function() {
+              this.W();
+              for (var cell = this.a, num = cell.length, i = 0; i < num; ++i) {
+                var prevAcc = cell[(i - 1 + num) % num].b;
+                var nextAcc = cell[(i + 1) % num].b;
+                cell[i].b += (Math.random() - 0.5) * (this.n ? 3 : 1);
+                cell[i].b *= 0.7;
+                if (10 < cell[i].b) {
+                  cell[i].b = 10;
+                }
+                if (-10 > cell[i].b) {
+                  cell[i].b = -10;
+                }
+                cell[i].b = (prevAcc + nextAcc + 8 * cell[i].b) / 10;
+              }
+              for (var thisCell = this, roll = this.h ? 0 : (this.id / 1000 + g_time / 10000) % (2 * Math.PI), i = 0; i < num; ++i) {
+                var size = cell[i].i;
+                var prevAcc = cell[(i - 1 + num) % num].i;
+                var nextAcc = cell[(i + 1) % num].i;
+                if (15 < this.size && null != g_pointTree && 20 < this.size * g_scale && 0 < this.id) {
+                  var reduce = false;
+                  var x = cell[i].x;
+                  var y = cell[i].y;
+                  g_pointTree.ra(x - 5, y - 5, 10, 10, function(point) {
+                    if (point.V != thisCell && 25 > (x - point.x) * (x - point.x) + (y - point.y) * (y - point.y)) {
+                      reduce = true;
+                    }
+                  });
+                  if (!reduce && (cell[i].x < g_minX || cell[i].y < g_minY || cell[i].x > g_maxX || cell[i].y > g_maxY)) {
+                    reduce = true;
+                  }
+                  if (reduce) {
+                    if (0 < cell[i].b) {
+                      cell[i].b = 0;
+                    }
+                    cell[i].b -= 1;
+                  }
+                }
+                size += cell[i].b;
+                if (0 > size) {
+                  size = 0;
+                }
+                size = this.n ? (19 * size + this.size) / 20 : (12 * size + this.size) / 13;
+                cell[i].i = (prevAcc + nextAcc + 8 * size) / 10;
+                prevAcc = 2 * Math.PI / num;
+                nextAcc = this.a[i].i;
+                if (this.h && 0 == i % 2) {
+                  nextAcc += 5;
+                }
+                cell[i].x = this.x + Math.cos(prevAcc * i + roll) * nextAcc;
+                cell[i].y = this.y + Math.sin(prevAcc * i + roll) * nextAcc;
+              }
+            },
+            P: function() {
+              if (0 >= this.id) {
+                return 1;
+              }
+              var posRatio;
+              posRatio = (g_time - this.Q) / 120;
+              posRatio = 0 > posRatio ? 0 : 1 < posRatio ? 1 : posRatio;
+              var sizeRatio = 0 > posRatio ? 0 : 1 < posRatio ? 1 : posRatio;
+              this.l();
+              if (this.G && 1 <= sizeRatio) {
+                var i = g_destroyedCells.indexOf(this);
+                if (-1 != i) {
+                  g_destroyedCells.splice(i, 1);
+                }
+              }
+              this.x = posRatio * (this.J - this.s) + this.s;
+              this.y = posRatio * (this.K - this.t) + this.t;
+              this.size = sizeRatio * (this.q - this.r) + this.r;
+              return sizeRatio;
+            },
+            N: function() {
+              return 0 >= this.id ? true : this.x + this.size + 40 < g_viewX - g_protocol / 2 / g_scale || this.y + this.size + 40 < g_viewY - __unmatched_60 / 2 / g_scale || this.x - this.size - 40 > g_viewX + g_protocol / 2 / g_scale || this.y - this.size - 40 > g_viewY + __unmatched_60 / 2 / g_scale ? false : true;
+            },
+            w: function(context) {
+              if (this.N()) {
+                ++this.Y;
+                var isSimpleDrawing = 0 < this.id && !this.h && !this.n && 0.4 > g_scale;
+                if (5 > this.I() && 0 < this.id) {
+                  isSimpleDrawing = true;
+                }
+                if (this.R && !isSimpleDrawing) {
+                  for (var text = 0; text < this.a.length; text++) {
+                    this.a[text].i = this.size;
+                  }
+                }
+                this.R = isSimpleDrawing;
+                context.save();
+                this.ja = g_time;
+                text = this.P();
+                if (this.G) {
+                  context.globalAlpha *= 1 - text;
+                }
+                context.lineWidth = isLargeBlobBorders ? 30 : 10;
+                context.lineCap = 'round';
+                context.lineJoin = this.h ? 'miter' : 'round';
+                if (g_noColors) {
+                  context.fillStyle = '#FFFFFF';
+                  context.strokeStyle = '#AAAAAA';
+                } else {
+                  context.fillStyle = this.color;
+                  context.strokeStyle = this.color;
+                }
+                if (isVirusTransparent && this.h) {
+                  context.globalAlpha = 0.6;
+                }
+                if (isSimpleDrawing) {
+                  context.beginPath();
+                  context.arc(this.x, this.y, this.size + 5, 0, 2 * Math.PI, false);
+                } else {
+                  this.qa();
+                  context.beginPath();
+                  var num = this.I();
+                  context.moveTo(this.a[0].x, this.a[0].y);
+                  for (text = 1; text <= num; ++text) {
+                    var skin = text % num;
+                    context.lineTo(this.a[skin].x, this.a[skin].y);
+                  }
+                }
+                context.closePath();
+                text = this.name.toLowerCase();
+                if (!this.n && g_showSkins && ':teams' != __unmatched_95) {
+                  num = this.fa;
+                  if (null == num) {
+                    num = null;
+                  } else if (':' == num[0]) {
+                    if (!__unmatched_134.hasOwnProperty(num)) {
+                      __unmatched_134[num] = new Image();
+                      __unmatched_134[num].src = num.slice(1);
+                    }
+                    num = 0 != __unmatched_134[num].width && __unmatched_134[num].complete ? __unmatched_134[num] : null;
+                  } else {
+                    num = null;
+                  }
+                  if (!num) {
+                    if (-1 != g_skinNamesA.indexOf(text)) {
+                      if (!g_skinCache.hasOwnProperty(text)) {
+                        g_skinCache[text] = new Image();
+                        g_skinCache[text].src = 'skins/' + text + '.png';
+                      }
+                      num = 0 != g_skinCache[text].width && g_skinCache[text].complete ? g_skinCache[text] : null;
+                    } else {
+                      num = null;
+                    }
+                  }
+                } else {
+                  num = null;
+                }
+                skin = num;
+                if (!isSimpleDrawing) {
+                  context.stroke();
+                }
+                context.fill();
+                if (null != skin) {
+                  context.save();
+                  context.clip();
+                  context.drawImage(skin, this.x - this.size, this.y - this.size, 2 * this.size, 2 * this.size);
+                  context.restore();
+                }
+                if ((g_noColors || 15 < this.size) && !isSimpleDrawing) {
+                  context.strokeStyle = '#000000';
+                  context.globalAlpha *= 0.1;
+                  context.stroke();
+                }
+                context.globalAlpha = 1;
+                num = -1 != g_playerCells.indexOf(this);
+                isSimpleDrawing = ~~this.y;
+                if (0 != this.id && (g_showNames || num) && this.name && this.o && (null == skin || -1 == __unmatched_133.indexOf(text))) {
+                  skin = this.o;
+                  skin.C(this.name);
+                  skin.M(this.l());
+                  text = 0 >= this.id ? 1 : Math.ceil(10 * g_scale) / 10;
+                  skin.ea(text);
+                  var skin = skin.L();
+                  var g_width = ~~(skin.width / text);
+                  var g_height = ~~(skin.height / text);
+                  context.drawImage(skin, ~~this.x - ~~(g_width / 2), isSimpleDrawing - ~~(g_height / 2), g_width, g_height);
+                  isSimpleDrawing += skin.height / 2 / text + 4;
+                }
+                if (0 < this.id && g_darkTheme && (num || 0 == g_playerCells.length && (!this.h || this.n) && 20 < this.size)) {
+                  if (null == this.O) {
+                    this.O = new CachedCanvas(this.l() / 2, '#FFFFFF', true, '#000000');
+                  }
+                  num = this.O;
+                  num.M(this.l() / 2);
+                  num.C(~~(this.size * this.size / 100));
+                  text = Math.ceil(10 * g_scale) / 10;
+                  num.ea(text);
+                  skin = num.L();
+                  g_width = ~~(skin.width / text);
+                  g_height = ~~(skin.height / text);
+                  context.drawImage(skin, ~~this.x - ~~(g_width / 2), isSimpleDrawing - ~~(g_height / 2), g_width, g_height);
+                }
+                if(g_darkTheme) {
+                  if(num || 20 < this.size) {
+                      if(null == this.O) {
+                         this.O = new CachedCanvas(this.l() / 2, "#FFFFFF", true, "#000000");
+                      }
+                      var sizePlot = this.O;
+                      sizePlot.M(this.l() / 2);
+                      sizePlot.C(~~(this.size * this.size / 100));
+                      var sizeScale = Math.ceil(10 * g_scale) / 10;
+                      sizePlot.ea(sizeScale);
+                      var sizeRender = sizePlot.L();
+                      g_width = ~~(sizeRender.width / sizeScale);
+                      g_height = ~~(sizeRender.height / sizeScale);
+                      context.drawImage(sizeRender, ~~this.x - ~~(g_width / 2), isSimpleDrawing - ~~(g_height / 2), g_width, g_height);
+                  }
+                }
+                context.restore();
+              }
+            }
+          };
+          CachedCanvas.prototype = {
+            F: '',
+            S: '#000000',
+            U: false,
+            v: '#000000',
+            u: 16,
+            p: null,
+            T: null,
+            k: false,
+            D: 1,
+            M: function(val) {
+              if (this.u != val) {
+                this.u = val;
+                this.k = true;
+              }
+            },
+            ea: function(val) {
+              if (this.D != val) {
+                this.D = val;
+                this.k = true;
+              }
+            },
+            setStrokeColor: function(val) {
+              if (this.v != val) {
+                this.v = val;
+                this.k = true;
+              }
+            },
+            C: function(val) {
+              if (val != this.F) {
+                this.F = val;
+                this.k = true;
+              }
+            },
+            L: function() {
+              if (null == this.p) {
+                this.p = document.createElement('canvas');
+                this.T = this.p.getContext('2d');
+              }
+              if (this.k) {
+                this.k = false;
+                var canvas = this.p;
+                var context = this.T;
+                var value = this.F;
+                var scale = this.D;
+                var size = this.u;
+                var font = size + 'px Ubuntu';
+                context.font = font;
+                var extra = ~~(0.2 * size);
+                canvas.width = (context.measureText(value).width + 6) * scale;
+                canvas.height = (size + extra) * scale;
+                context.font = font;
+                context.scale(scale, scale);
+                context.globalAlpha = 1;
+                context.lineWidth = 3;
+                context.strokeStyle = this.v;
+                context.fillStyle = this.S;
+                if (this.U) {
+                  context.strokeText(value, 3, size - extra / 2);
+                }
+                context.fillText(value, 3, size - extra / 2);
+              }
+              return this.p;
+            }
+          };
+          if (!Date.now) {
+            Date.now = function() {
+              return new Date().getTime();
+            };
+          }
+          (function() {
+            for (var g_skinNamesB = [
+                  'ms',
+                  'moz',
+                  'webkit',
+                  'o'
+                ], i = 0; i < g_skinNamesB.length && !window.requestAnimationFrame; ++i) {
+              window.requestAnimationFrame = window[g_skinNamesB[i] + 'RequestAnimationFrame'];
+              window.cancelAnimationFrame = window[g_skinNamesB[i] + 'CancelAnimationFrame'] || window[g_skinNamesB[i] + 'CancelRequestAnimationFrame'];
+            }
+            if (!window.requestAnimationFrame) {
+              window.requestAnimationFrame = function(__unmatched_363) {
+                return setTimeout(__unmatched_363, 1000 / 60);
+              };
+              window.cancelAnimationFrame = function(__unmatched_364) {
+                clearTimeout(__unmatched_364);
+              };
+            }
+          }());
+          var QTreeFactory = {
+            la: function(params) {
+              function Node(left, top, width, height, depth) {
+                this.x = left;
+                this.y = top;
+                this.j = width;
+                this.g = height;
+                this.depth = depth;
+                this.items = [];
+                this.c = [];
+              }
+              var maxItems = params.ma || 2;
+              var maxDepth = params.na || 4;
+              Node.prototype = {
+                x: 0,
+                y: 0,
+                j: 0,
+                g: 0,
+                depth: 0,
+                items: null,
+                c: null,
+                H: function(rect) {
+                  for (var i = 0; i < this.items.length; ++i) {
+                    var item = this.items[i];
+                    if (item.x >= rect.x && item.y >= rect.y && item.x < rect.x + rect.j && item.y < rect.y + rect.g) {
+                      return true;
+                    }
+                  }
+                  if (0 != this.c.length) {
+                    var thisNode = this;
+                    return this.$(rect, function(n) {
+                      return thisNode.c[n].H(rect);
+                    });
+                  }
+                  return false;
+                },
+                A: function(rect, callback) {
+                  for (var i = 0; i < this.items.length; ++i) {
+                    callback(this.items[i]);
+                  }
+                  if (0 != this.c.length) {
+                    var node = this;
+                    this.$(rect, function(n) {
+                      node.c[n].A(rect, callback);
+                    });
+                  }
+                },
+                m: function(item) {
+                  if (0 != this.c.length) {
+                    this.c[this.Z(item)].m(item);
+                  } else if (this.items.length >= maxItems && this.depth < maxDepth) {
+                    this.ia();
+                    this.c[this.Z(item)].m(item);
+                  } else {
+                    this.items.push(item);
+                  }
+                },
+                Z: function(item) {
+                  return item.x < this.x + this.j / 2 ? item.y < this.y + this.g / 2 ? 0 : 2 : item.y < this.y + this.g / 2 ? 1 : 3;
+                },
+                $: function(rect, callback) {
+                  return rect.x < this.x + this.j / 2 && (rect.y < this.y + this.g / 2 && callback(0) || rect.y >= this.y + this.g / 2 && callback(2)) || rect.x >= this.x + this.j / 2 && (rect.y < this.y + this.g / 2 && callback(1) || rect.y >= this.y + this.g / 2 && callback(3)) ? true : false;
+                },
+                ia: function() {
+                  var depth = this.depth + 1;
+                  var width = this.j / 2;
+                  var height = this.g / 2;
+                  this.c.push(new Node(this.x, this.y, width, height, depth));
+                  this.c.push(new Node(this.x + width, this.y, width, height, depth));
+                  this.c.push(new Node(this.x, this.y + height, width, height, depth));
+                  this.c.push(new Node(this.x + width, this.y + height, width, height, depth));
+                  depth = this.items;
+                  this.items = [];
+                  for (width = 0; width < depth.length; width++) {
+                    this.m(depth[width]);
+                  }
+                },
+                clear: function() {
+                  for (var i = 0; i < this.c.length; i++) {
+                    this.c[i].clear();
+                  }
+                  this.items.length = 0;
+                  this.c.length = 0;
+                }
+              };
+              var __unmatched_369 = {
+                x: 0,
+                y: 0,
+                j: 0,
+                g: 0
+              };
+              return {
+                root: new Node(params.ca, params.da, params.oa - params.ca, params.pa - params.da, 0),
+                m: function(item) {
+                  this.root.m(item);
+                },
+                A: function(rect, callback) {
+                  this.root.A(rect, callback);
+                },
+                ra: function(left, top, width, height, callback) {
+                  __unmatched_369.x = left;
+                  __unmatched_369.y = top;
+                  __unmatched_369.j = width;
+                  __unmatched_369.g = height;
+                  this.root.A(__unmatched_369, callback);
+                },
+                H: function(rect) {
+                  return this.root.H(rect);
+                },
+                clear: function() {
+                  this.root.clear();
+                }
+              };
+            }
+          };
+          var __unmatched_136 = function() {
+            var __unmatched_402 = new Cell(0, 0, 0, 32, '#ED1C24', '');
+            var __unmatched_403 = document.createElement('canvas');
+            __unmatched_403.width = 32;
+            __unmatched_403.height = 32;
+            var rect = __unmatched_403.getContext('2d');
+            return function() {
+              if (0 < g_playerCells.length) {
+                __unmatched_402.color = g_playerCells[0].color;
+                __unmatched_402.B(g_playerCells[0].name);
+              }
+              rect.clearRect(0, 0, 32, 32);
+              rect.save();
+              rect.translate(16, 16);
+              rect.scale(0.4, 0.4);
+              __unmatched_402.w(rect);
+              rect.restore();
+              var __unmatched_405 = document.getElementById('favicon');
+              var canvas = __unmatched_405.cloneNode(true);
+              canvas.setAttribute('href', __unmatched_403.toDataURL('image/png'));
+              __unmatched_405.parentNode.replaceChild(canvas, __unmatched_405);
+            };
+          }();
+          $(function() {
+            __unmatched_136();
+          });
+          $(function() {
+            if (+window.localStorage.wannaLogin) {
+              if (window.localStorage.loginCache) {
+                __unmatched_44(window.localStorage.loginCache);
+              }
+              if (window.localStorage.fbPictureCache) {
+                $('.agario-profile-picture').attr('src', window.localStorage.fbPictureCache);
+              }
+            }
+          });
+          window.facebookLogin = function() {
+            window.localStorage.wannaLogin = 1;
+          };
+          window.fbAsyncInit = function() {
+            function __unmatched_407() {
+              window.localStorage.wannaLogin = 1;
+              if (null == window.FB) {
+                alert('You seem to have something blocking Facebook on your browser, please check for any extensions');
+              } else {
+                window.FB.login(function(__unmatched_408) {
+                  UpdateScale(__unmatched_408);
+                }, {
+                  scope: 'public_profile, email'
+                });
+              }
+            }
+            window.FB.init({
+              appId: '677505792353827',
+              cookie: true,
+              xfbml: true,
+              status: true,
+              version: 'v2.2'
+            });
+            window.FB.Event.subscribe('auth.statusChange', function(__unmatched_409) {
+              if (+window.localStorage.wannaLogin) {
+                if ('connected' == __unmatched_409.status) {
+                  UpdateScale(__unmatched_409);
+                } else {
+                  __unmatched_407();
+                }
+              }
+            });
+            window.facebookLogin = __unmatched_407;
+          };
+          window.logout = function() {
+            __unmatched_108 = null;
+            $('#helloContainer').attr('data-logged-in', '0');
+            $('#helloContainer').attr('data-has-account-data', '0');
+            delete window.localStorage.wannaLogin;
+            delete window.localStorage.loginCache;
+            delete window.localStorage.fbPictureCache;
+            Start();
+          };
+          var __unmatched_137 = function() {
+            function ParseString(__unmatched_419, __unmatched_420, __unmatched_421, __unmatched_422, __unmatched_423) {
+              var canvas = __unmatched_420.getContext('2d');
+              var width = __unmatched_420.width;
+              __unmatched_420 = __unmatched_420.height;
+              __unmatched_419.color = __unmatched_423;
+              __unmatched_419.B(__unmatched_421);
+              __unmatched_419.size = __unmatched_422;
+              canvas.save();
+              canvas.translate(width / 2, __unmatched_420 / 2);
+              __unmatched_419.w(canvas);
+              canvas.restore();
+            }
+            for (var __unmatched_411 = new Cell(-1, 0, 0, 32, '#5bc0de', ''), __unmatched_412 = new Cell(-1, 0, 0, 32, '#5bc0de', ''), __unmatched_413 = '#0791ff #5a07ff #ff07fe #ffa507 #ff0774 #077fff #3aff07 #ff07ed #07a8ff #ff076e #3fff07 #ff0734 #07ff20 #ff07a2 #ff8207 #07ff0e'.split(' '), g_skinNamesC = [], j = 0; j < __unmatched_413.length; ++j) {
+              var sub = j / __unmatched_413.length * 12;
+              var __unmatched_417 = 30 * Math.sqrt(j / __unmatched_413.length);
+              g_skinNamesC.push(new Cell(-1, Math.cos(sub) * __unmatched_417, Math.sin(sub) * __unmatched_417, 10, __unmatched_413[j], ''));
+            }
+            __unmatched_42(g_skinNamesC);
+            var data = document.createElement('canvas');
+            data.getContext('2d');
+            data.width = data.height = 70;
+            ParseString(__unmatched_412, data, '', 26, '#ebc0de');
+            return function() {
+              $('.cell-spinner').filter(':visible').each(function() {
+                var __unmatched_426 = $(this);
+                var g = Date.now();
+                var __unmatched_428 = this.width;
+                var __unmatched_429 = this.height;
+                var __unmatched_430 = this.getContext('2d');
+                __unmatched_430.clearRect(0, 0, __unmatched_428, __unmatched_429);
+                __unmatched_430.save();
+                __unmatched_430.translate(__unmatched_428 / 2, __unmatched_429 / 2);
+                for (var g_numFrames = 0; 10 > g_numFrames; ++g_numFrames) {
+                  __unmatched_430.drawImage(data, (0.1 * g + 80 * g_numFrames) % (__unmatched_428 + 140) - __unmatched_428 / 2 - 70 - 35, __unmatched_429 / 2 * Math.sin((0.001 * g + g_numFrames) % Math.PI * 2) - 35, 70, 70);
+                }
+                __unmatched_430.restore();
+                if (__unmatched_426 = __unmatched_426.attr('data-itr')) {
+                  __unmatched_426 = __unmatched_14(__unmatched_426);
+                }
+                ParseString(__unmatched_411, this, __unmatched_426 || '', +$(this).attr('data-size'), '#5bc0de');
+              });
+              $('#statsPellets').filter(':visible').each(function() {
+                $(this);
+                var __unmatched_432 = this.width;
+                var __unmatched_433 = this.height;
+                this.getContext('2d').clearRect(0, 0, __unmatched_432, __unmatched_433);
+                for (__unmatched_432 = 0; __unmatched_432 < g_skinNamesC.length; __unmatched_432++) {
+                  ParseString(g_skinNamesC[__unmatched_432], this, '', g_skinNamesC[__unmatched_432].size, g_skinNamesC[__unmatched_432].color);
+                }
+              });
+            };
+          }();
+          window.createParty = function() {
+            Render(':party');
+            __unmatched_121 = function(__unmatched_434) {
+              __unmatched_48('/#' + window.encodeURIComponent(__unmatched_434));
+              $('.partyToken').val('agar.io/#' + window.encodeURIComponent(__unmatched_434));
+              $('#helloContainer').attr('data-party-state', '1');
+            };
+            Start();
+          };
+          window.joinParty = RenderLoop;
+          window.cancelParty = function() {
+            __unmatched_48('/');
+            $('#helloContainer').attr('data-party-state', '0');
+            Render('');
+            Start();
+          };
+          var cached = [];
+          var __unmatched_139 = 0;
+          var __unmatched_140 = '#000000';
+          var __unmatched_141 = false;
+          var __unmatched_142 = false;
+          var __unmatched_143 = 0;
+          var __unmatched_144 = 0;
+          var __unmatched_145 = 0;
+          var __unmatched_146 = 0;
+          var g_mode = 0;
+          var __unmatched_148 = true;
+          setInterval(function() {
+            if (__unmatched_142) {
+              cached.push(__unmatched_36() / 100);
+            }
+          }, 1000 / 60);
+          setInterval(function() {
+            var start = __unmatched_51();
+            if (0 != start) {
+              ++__unmatched_145;
+              if (0 == g_mode) {
+                g_mode = start;
+              }
+              g_mode = Math.min(g_mode, start);
+            }
+          }, 1000);
+          window.closeStats = function() {
+            __unmatched_141 = false;
+            $('#stats').hide();
+            __unmatched_10(0);
+          };
+          window.setSkipStats = function(__unmatched_436) {
+            __unmatched_148 = !__unmatched_436;
+          };
+          $(function() {
+            $(Init);
+          });
+        }
+      }
+    }
+  }
+
+  var isUnlimitedZoom = false;
+  var isSpectating = false;
+  var isVirusTransparent = false;
+  var isLargeNames = false;
+  var isLargeBlobBorders = false;
+  var myMass = 0;
+
+}(window, window.jQuery));
+
+</script>
+<script>
+
+var hasBottomAd = false;
+
+var dfp = null;
+var dfpBottom = null;
+var dfpStats = null;
+
+window['aa'] = [];
+window['ab'] = [];
+
+if(window.location.search.indexOf('fb') != -1){
+  dfp = '/53945695/agar_facebook/agar/300x250';
+  dfpStats = '/53945695/agar_facebook/agar/300x250_Stats';
+}else{
+  dfp = '/53945695/agar/300x250_CRL_adrefresh_0min';
+  dfpBottom = '/53945695/agar/728x90';
+  dfpStats = '/53945695/agar/300x250_RCL';
+}
+
+
+if(window.innerHeight > 960 && dfpBottom != null){
+  hasBottomAd = true;
+}
+
+googletag.cmd.push(function() {
+  window['aa'].push(googletag.defineSlot(dfp, [300, 250], 'a300x250').addService(googletag.pubads()));
+  if(hasBottomAd) window['aa'].push(googletag.defineSlot(dfpBottom, [728, 90], 'a728x90').addService(googletag.pubads()));
+  window['ab'].push(googletag.defineSlot(dfpStats, [300, 250], 's300x250').addService(googletag.pubads()));
+  googletag.enableServices();
+});
+
+</script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script src="js/advertisement.js"></script>
+<div id="overlays" style="display:none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 200;">
+<div id="helloContainer" data-logged-in="0" data-has-account-data="0" data-party-state="0" data-results-state="0" data-gamemode="">
+<div class="side-container">
+<div class="agario-panel agario-side-panel agario-profile-panel" style="top: -100px; padding: 0px;position: relative; z-index: -1; left: 388%; color:#F87B32;">
+<div class="clearfix" style="margin-bottom: 16px;">
+<img class="agario-profile-picture"/>
+<div class="agario-profile-name-container">
+<span class="agario-profile-name"></span>
+</div>
+</div>
+<div style="position: relative; margin-bottom: -15px;" class="clearfix">
+<div class="agario-exp-bar progress">
+<span class="progress-bar-text"></span>
+<div class="progress-bar progress-bar-striped" style="width: 0%;"></div>
+</div>
+<div class="progress-bar-border"></div>
+<div class="progress-bar-star"></div>
+</div>
+</div>
+ 
+</div>
+<div id="mainPanel" class="agario-panel" style="width: 1920px; height: 200px; padding: 0px; top: -100px; left: 0px;position: relative;">
+<form role="form">
+<div class="form-group clearfix">
+<div style="text-align: center; margin-left: 20px;"><h2 style="color:#F87B32">Agar.io</h2></div>
+</div>
+<div class="form-group clearfix">
+<input id="nick" class="form-control" style="padding: 15px;" placeholder="Nick" maxlength="15" autofocus />
+<select id="gamemode" class="form-control" onchange="setGameMode($(this).val());" required>
+<option selected value="" data-itr="gamemode_ffa"></option>
+<option value=":teams" data-itr="gamemode_teams"></option>
+<option value=":experimental" data-itr="gamemode_experimental"></option>
+<option value=":party" data-itr="party"></option>
+</select>
+</div>
+ 
+<div class="form-group" id="agario-main-buttons">
+<button disabled type="submit" onclick="setNick(document.getElementById('nick').value); return false;" style="position: absolute; left: 43.5%; top: 78.5%" class="btn btn-play btn-primary btn-needs-server" data-itr="play"></button>
+<button disabled type="submit" onclick="setNick(document.getElementById('nick').value); return false;" class="btn btn-play-guest btn-success btn-needs-server" style="position: absolute; left: 47.5%; top: 78%" data-itr="play_as_guest"></button>
+<button onclick="facebookLogin(); return false;" style="position: absolute; left: 58%; top: 78%" class="btn btn-login btn-primary" style="line-height: 24px;">
+<span class="social social-facebook" style="font-size:24px;margin-top:-6px;margin-left:-8px;vertical-align:middle;margin-right:5px;"></span>
+<span data-itr="login_and_play"></span>
+</button>
+<br clear="both"/>
+</div>
+<div id="settings" class="checkbox" style="">
+<div style="float: left; width: 200px;">
+<div id="options" style="margin: 6px; font-size: 12px;">
+<div style="position: absolute; left: 40%; top: -800%; color:#FFF;">
+<label>
+<input type="checkbox" id="checkLargeBlobBorders" onchange="setLargeBlobBorders($(this).is(':checked'));"> Large Blob Borders
+</label>
+</div>
+<div style="position: absolute; left: 40%; top: -650%; color:#FFF;">
+<label>
+<input type="checkbox" id="checkUnlimitedZoom" onchange="setUnlimitedZoom($(this).is(':checked'));"> Unlimited Zoom
+</label>
+</div>
+<div style="position: absolute; left: 40%; top: -500%; color:#FFF;">
+<label>
+<input type="checkbox" id="checkLargeNames" onchange="setLargeNames($(this).is(':checked'));"> Large Names
+</label>
+</div>
+<div style="position: absolute; left: 59%; top: -800%; color:#FFF;">
+<label>
+<input type="checkbox" id="checkVirusTransparent" onchange="setVirusTransparent($(this).is(':checked'));"> Virus Transparent
+</label>
+</div>
+<div style="position: absolute; left: 64%; top: -500%; color:#FFF;">
+<label>
+<input type="checkbox" onchange="setSkins(!$(this).is(':checked'));"><span data-itr="option_no_skins">No skins</span>
+</label>
+
+</div>
+<div style="position: absolute; left: 35%; top: -800%; color:#FFF;">
+<label><input type="checkbox" onchange="setNames(!$(this).is(':checked'));"><span data-itr="option_no_names">No names</span></label>
+</div>
+<div style="position: absolute; left: 59%; top: -500%; color:#FFF;">
+<label><input type="checkbox" onchange="setColors($(this).is(':checked'));"><span data-itr="option_no_colors">No colors</span></label>
+</div>
+<div style="position: absolute; left: 59%; top: -650%; color:#FFF;">
+<label><input type="checkbox" checked onchange="setShowMass($(this).is(':checked'));"><span data-itr="option_show_mass">Show mass</span></label>
+</div>
+<div style="position: absolute; left: 35%; top: -650%; color:#FFF;">
+<label><input type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"><span data-itr="option_dark_theme">Dark theme</span></label>
+</div>
+<div style="position: absolute; left: 64%; top: -650%; color:#FFF;">
+<label><input type="checkbox" onchange="setSkipStats($(this).is(':checked'));"><span data-itr="option_skip_stats">Skip stats</span></label>
+</div>
+</div>
+</div>
+<div style="float: right; width: 120px;">
+<button onclick="spectate(); return false;" style="position: absolute; top: -195%; right: 56.8%;" disabled class="btn btn-warning btn-spectate btn-needs-server" data-itr="spectate"></button>
+<button onclick="logout(); return false;" class="btn btn-danger btn-logout" style="position: absolute; top: -195%; left: 58%;" data-itr="logout"></button>
+</div>
+<br clear="both"/>
+</div>
+</form>
+<center>
+<div id="a300x250" style="margin-bottom: 10px;"></div>
+</center>
+</div>
+<div id="stats" style="display: none;" class="agario-panel">
+<h2 style="color: #F87B32;"><center>Match Results</center></h2>
+<canvas id="statsGraph" width="350" height="230"></canvas>
+<div id="statsPelletsContainer">
+ 
+<span id="statsText" style="color: #F87B32;" class="stats-food-eaten"></span>
+<span id="statsSubtext" style="color: #F87B32;" data-itr="stats_food_eaten"></span>
+</div>
+<div id="statsHighestMassContainer" style="color: #F87B32;">
+ 
+<span id="statsText" style="color: #F87B32;" class="stats-highest-mass"></span>
+<span id="statsSubtext" style="color: #F87B32;" data-itr="stats_highest_mass"></span>
+</div>
+<div id="statsTimeAliveContainer" style="color: #F87B32;">
+ 
+<span id="statsText" style="color: #F87B32;" class="stats-time-alive"></span>
+<span id="statsSubtext" style="color: #F87B32;" data-itr="stats_time_alive"></span>
+</div>
+<div id="statsTimeLeaderboardContainer" style="color: #F87B32;">
+ 
+<span id="statsText" style="color: #F87B32;" class="stats-leaderboard-time"></span>
+<span id="statsSubtext" style="color: #F87B32;" data-itr="stats_leaderboard_time"></span>
+</div>
+<div id="statsPlayerCellsEatenContainer" style="color: #F87B32;">
+ 
+<span id="statsText" style="color: #F87B32;" class="stats-cells-eaten"></span>
+<span id="statsSubtext" style="color: #F87B32;" data-itr="stats_cells_eaten"></span>
+</div>
+<div id="statsTopPositionContainer" style="color: #F87B32;">
+ 
+<span id="statsText" style="color: #F87B32;" class="stats-top-position">?</span>
+<span id="statsSubtext" style="color: #F87B32;" data-itr="stats_top_position"></span>
+</div>
+<hr style="position:absolute;bottom:350px;width:100%;margin:0px;"/>
+<button id="statsContinue" class="btn btn-primary" data-itr="continue" onclick="closeStats();"></button>
+<hr style="position:absolute;bottom:255px;width:100%;"/>
+<div id="s300x250"></div>
+</div>
+<div class="side-container">
+<div class="agario-party" >
+<div class="agario-panel agario-side-panel agario-party-0"  style="top: -100px; left: 387%;position: absolute;color: #F87B32;">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="party_description"></div>
+<div class="clearfix" style="margin: 0px -10px 0px -10px;">
+<button class="btn btn-primary" style="width: 102.5px; float: left;" onclick="$('#helloContainer').attr('data-party-state', '3');createParty();" data-itr="create_party"></button>
+<button class="btn btn-primary" style="width: 102.5px; float: right;" onclick="$('#joinPartyToken').val('');$('#helloContainer').attr('data-party-state', '2');" data-itr="join_party"></button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-1" style="top: -100px; left: 387%;position: absolute;color: #F87B32;">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="create_party_instructions"></div>
+<div class="clearfix">
+<input type="text" value="??????" readonly class="partyToken form-control" style="cursor: text; width: 130px; float: left; border-radius: 4px 0px 0px 4px;"/>
+<button class="btn btn-primary copy-party-token" style="float: right; width: 60px; border-radius: 0px 4px 4px 0px;">Copy</button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-2" style="top: -100px; left: 387%;position: absolute;color: #F87B32;">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="join_party_instructions"></div>
+<input id="joinPartyToken" type="text" value="" class="form-control"/>
+<div class="clearfix" style="margin: 10px -10px 0px -10px;">
+<button class="btn btn-primary" style="width: 210px; float: right;" onclick="joinParty($('#joinPartyToken').val());" data-itr="join_party"></button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-3"  style="top: -100px; left: 387%;position: absolute;color: #F87B32;padding: 0px; overflow: hidden;">
+<canvas width="220" height="100" class="cell-spinner" data-size="26"></canvas>
+<div class="creating-party-text" data-itr="creating_party"></div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-4" style="top: -100px; left: 387%;position: absolute;color: #F87B32; padding: 0px; overflow: hidden;">
+<canvas width="220" height="100" class="cell-spinner" data-size="26"></canvas>
+<div class="creating-party-text" data-itr="joining_party"></div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-5" style="top: -100px; left: 387%;position: absolute;color: #F87B32;">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="joined_party_instructions"></div>
+<div class="clearfix">
+<input type="text" value="??????" readonly class="partyToken form-control" style="top: -100px; left: 387%;cursor: text; width: 125px; float: left;"/>
+<button class="btn btn-primary copy-party-token" style="float: right; width: 60px;">Copy</button>
+</div>
+</div>
+<div class="agario-panel agario-side-panel agario-party-6" style="top: -100px; left: 387%;position: absolute;color: #F87B32;">
+<h4><center data-itr="party"></center></h4>
+<div style="margin-bottom: 12px;" data-itr="party_join_error"></div>
+<div class="clearfix" style="margin: 10px -10px 0px -10px;">
+<button class="btn btn-primary btn-block" onclick="$('#helloContainer').attr('data-party-state', '0');" data-itr="back_button"></button>
+</div>
+</div>
+<div style="position: absolute; right: 10px; top: 4px;">
+<button type="button" class="close" onclick="cancelParty();">&times;</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tosBox">
+<center>
+Extension made by <a href="http://eptun.eu" target="_blank">Eptun</a>
+</center>
+</div>
+</div>
+<div id="connecting" style="display: none; position: absolute; left: 0; right: 0; top: 30%; bottom: 0; z-index: 100;">
+<div class="connecting-panel" style="width: 350px; background-color: #FFFFFF; margin: auto; border-radius: 15px; padding: 5px 15px 5px 15px;">
+<h2 data-itr="connecting"></h2>
+<p data-itr="connect_help"></p>
+</div>
+</div>
+<script>
+
+$('.partyToken').on('mouseover click mousemove mousedown mouseup select', function(e){
+  //this.setSelectionRange(0, this.value.length);
+  //e.preventDefault();
+});
+
+$('.copy-party-token').click(function(){
+  var i = $('.partyToken:visible')[0];
+  i.setSelectionRange(0, i.value.length);
+  i.select();
+  try {
+    document.execCommand('copy');
+  } catch (e) {}
+});
+
+googletag.cmd.push(function() { googletag.display('a300x250'); });
+if(hasBottomAd) googletag.cmd.push(function() { googletag.display('a728x90'); });
+googletag.cmd.push(function() { googletag.display('s300x250'); });
+
+var hasAdblock = 0;
+
+if(hasAdblock){
+  $('#a300x250').css('background-image', "url('blocker.png')");
+}
+</script>
+<canvas id="canvas" width="800" height="600"></canvas>
+<div style="font-family:'Ubuntu'">&nbsp;</div>
+<script>
+
+$(function () {
+  $('[data-itr]').each(function(){
+    var $this = $(this);
+    var itr = $this.attr('data-itr');
+    $this.html(i18n[itr] || i18n_dict['en'][itr] || itr);
+    //$this.html('');
+  });
+  
+  $('.btn-login').tooltip({
+    'html': true,
+    'title': i18n['login_tooltip'],
+    'placement': 'bottom'
+  });
+});
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-62402209-1', 'auto');
+ga('send', 'pageview');
+ga('send', 'event', 'HasAdblock', hasAdblock ? 'Yes' : 'No', {'nonInteraction': 1});
+
+//ga('send', 'event', 'Protocol', window.location.protocol, {'nonInteraction': 1});
+
+</script>
+</body>
+</html>
