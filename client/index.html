@@ -39,7 +39,7 @@ node.parentNode.insertBefore(gads, node);
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/glyphicons-social.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
-<style>body{padding:0;margin:0;overflow:hidden;}#canvas{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;}form{margin-bottom:0px;}.btn-play,.btn-settings,.btn-spectate,.btn-play-guest,.btn-login,.btn-logout{display:block;float:left;height:35px;}.btn-spectate,.btn-logout{height:35px;display:block;width:110px;margin-left:10px;margin-bottom:5px;}#helloContainer[data-logged-in="0"] .btn-play-guest{margin-left:5px;width:125px;}#helloContainer[data-logged-in="0"] .btn-login{margin-left:5px;width:145px;}#helloContainer[data-logged-in="0"] .agario-exp-bar,#helloContainer[data-logged-in="0"] .progress-bar-star,#helloContainer[data-logged-in="0"] #agario-main-buttons .agario-profile,#helloContainer[data-logged-in="0"] .btn-play{display:none;}#helloContainer[data-logged-in="0"] .btn-logout{display:none;}#helloContainer[data-logged-in="1"] .btn-play{margin-left:5px;width:275px;}#helloContainer[data-logged-in="1"] .btn-play-guest{display:none;}#helloContainer[data-logged-in="1"] .btn-login{display:none;}.btn-settings{width:40px;}.btn-spectate{display:block;float:right;}#adsBottom{position:absolute;left:0;right:0;bottom:0;}#adsBottomInner{margin:0px auto;width:728px;height:90px;border:5px solid white;border-radius:5px 5px 0px 0px;background-color:#FFFFFF;box-sizing:content-box;}.region-message{display:none;margin-bottom:12px;margin-left:6px;margin-right:6px;text-align:center;}#nick{width:10%;padding: 0px; left: 46%; top: -12px;position: relative;}#locationKnown #region{width:100%;}#locationUnknown #region{margin-bottom:15px;}#gamemode{width:10%;float:right;top: -6px;right: 44%;position: relative;}.agario-panel{display:inline-block;width:350px;background-color:rgba(25, 28, 29, 0.72);margin:2px;border-radius:10px;padding:5px 15px 5px 15px;vertical-align:top;}.agario-side-panel{display:inline-block;width:220px;}#helloContainer,.connecting-panel{position:absolute;top:50%;left:50%;margin-right:-50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}#a300x250{width:300px;height:250px;background-repeat:no-repeat;background-size:contain;background-position:center center;}.agario-exp-bar{height:30px;position:relative;border:2px solid #01612B;}.agario-exp-bar .progress-bar{background-color:#338833;border-radius:0px 4px 4px 0px;-webkit-transition:none;transition:none;}.agario-exp-bar .progress-bar-text{font-size:12pt;cursor:default;opacity:0.75;color:#FFF;text-align:center;line-height:26px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;position:absolute;top:0;bottom:0;left:0;right:0;font-family:'Ubuntu',sans-serif;}#agario-results-table{width:100%;}#agario-results-table th{text-align:center;font-size:8pt;}#agario-results-table td{text-align:center;color:#999;font-size:11pt;padding-bottom:15px;}.progress-bar-star{position:absolute;top:-13px;right:-16px;width:50px;height:50px;background-image:url("img/star.png");background-size:cover;-webkit-transform:rotate3d(0,0,1,10deg);transform:rotate3d(0,0,1,10deg);-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:default;color:#FFF;text-align:center;line-height:55px;font-size:12pt;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;font-family:'Ubuntu',sans-serif;}.tooltip-inner{max-width:300px;}.agario-profile-panel{padding:15px 15px 15px 15px;}.agario-profile-panel .agario-profile-picture{float:left;display:block;width:64px;height:64px;border-radius:5px;border:2px solid #CCC;margin-right:6px;}.agario-profile-panel .agario-profile-name-container{float:left;display:table;width:120px;height:64px;position:relative;}.agario-profile-panel .agario-profile-name-container .agario-profile-name{display:table-cell;vertical-align:middle;text-align:center;font-weight:bold;}#helloContainer[data-has-account-data="0"] .agario-profile-panel{display:none;}.agario-party,.agario-party-0,.agario-party-1,.agario-party-2,.agario-party-3,.agario-party-4,.agario-party-5,.agario-party-6{display:none;}#helloContainer[data-gamemode=":party"] .agario-party{display:block;position:relative;}#helloContainer[data-gamemode=":party"] .agario-promo{display:none;}#helloContainer[data-party-state="0"] .agario-party-0{display:block;}#helloContainer[data-party-state="1"] .agario-party-1{display:block;}#helloContainer[data-party-state="2"] .agario-party-2{display:block;}#helloContainer[data-party-state="3"] .agario-party-3{display:block;}#helloContainer[data-party-state="4"] .agario-party-4{display:block;}#helloContainer[data-party-state="5"] .agario-party-5{display:block;}#helloContainer[data-party-state="6"] .agario-party-6{display:block;}.partyToken{margin-bottom:10px;}.side-container{vertical-align:top;display:inline-block;width:224px;}.cell-spinner{display:block;margin:0;}.creating-party-text{position:absolute;cursor:default;top:0;bottom:0;left:0;right:0;width:100%;height:100%;text-align:center;color:#FFF;font-size:24px;line-height:100px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;}.agario-results-0,.agario-results-1,.agario-results-2{display:none;}#helloContainer[data-results-state="0"] .agario-results-0{display:block;}#helloContainer[data-results-state="1"] .agario-results-1{display:block;}#helloContainer[data-results-state="2"] .agario-results-2{display:block;}#options>label{display:block;width:94px;float:left;}#stats{position:relative;width:350px;height:581px;padding:0px 0px 300px 0px;overflow:hidden;}#statsPelletsContainer,#statsTimeAliveContainer,#statsHighestMassContainer,#statsTimeLeaderboardContainer,#statsPlayerCellsEatenContainer,#statsTopPositionContainer{position:absolute;width:100px;height:100px;}#statsPelletsContainer{top:30px;left:50px;}#statsHighestMassContainer{top:30px;right:50px;}#statsTimeAliveContainer{top:85px;left:50px;}#statsTimeLeaderboardContainer{top:85px;right:50px;}#statsPlayerCellsEatenContainer{top:140px;left:50px;}#statsTopPositionContainer{top:140px;right:50px;}#statsPellets{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}#statsText{position:absolute;top:0;bottom:0;left:0;right:0;line-height:100px;font-size:23px;}#statsSubtext{position:absolute;bottom:0;left:0;right:0;line-height:60px;font-size:12px;color:#000;text-align:center;}#statsChartText{position:absolute;left:20px;bottom:250px;line-height:40px;font-size:40px;}#statsChartText,#statsText{cursor:default;color:#444;text-align:center;font-weight:bold;}#statsContinue{position:absolute;left:25px;right:25px;width:300px;bottom:295px;}#statsGraph{position:absolute;bottom:350px;left:0px;right:0px;opacity:0.4;}#s300x250{position:absolute;bottom:10px;left:25px;right:25px;width:300px;height:250px;}.tosBox{z-index:1000;position:absolute;bottom:0;right:0;background-color:#FFF;border-radius:5px 0px 0px 0px;padding:5px 10px;}</style>
+<style>body{padding:0;margin:0;overflow:hidden;}#canvas{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;}form{margin-bottom:0px;}.btn-play,.btn-settings,.btn-spectate,.btn-play-guest,.btn-login,.btn-logout{display:block;float:left;height:35px;}.btn-spectate,.btn-logout{height:35px;display:block;width:110px;margin-left:10px;margin-bottom:5px;}#helloContainer[data-logged-in="0"] .btn-play-guest{margin-left:5px;width:125px;}#helloContainer[data-logged-in="0"] .btn-login{margin-left:5px;width:145px;}#helloContainer[data-logged-in="0"] .agario-exp-bar,#helloContainer[data-logged-in="0"] .progress-bar-star,#helloContainer[data-logged-in="0"] #agario-main-buttons .agario-profile,#helloContainer[data-logged-in="0"] .btn-play{display:none;}#helloContainer[data-logged-in="0"] .btn-logout{display:none;}#helloContainer[data-logged-in="1"] .btn-play{margin-left:5px;width:275px;}#helloContainer[data-logged-in="1"] .btn-play-guest{display:none;}#helloContainer[data-logged-in="1"] .btn-login{display:none;}.btn-settings{width:40px;}.btn-spectate{display:block;float:right;}#adsBottom{position:absolute;left:0;right:0;bottom:0;}#adsBottomInner{margin:0px auto;width:728px;height:90px;border:5px solid white;border-radius:5px 5px 0px 0px;background-color:#FFFFFF;box-sizing:content-box;}.region-message{display:none;margin-bottom:12px;margin-left:6px;margin-right:6px;text-align:center;}#preview {width: 30px;height: 30px;border-radius: 400px;border: 3px solid #17c834;margin: 1px 0;float: left; position: absolute;left: 52.7%; top:42.5%;}#nicks {width: 10%;float: left; position: absolute; left: 46%; top: 42.5%;}#nick{width:10%;padding: 0px; left: 46%; top: -12px;position: relative;}#locationKnown #region{width:100%;}#locationUnknown #region{margin-bottom:15px;}#gamemode{width:10%;float:right;top: -42.5%;right: 44%;position: relative;}.agario-panel{display:inline-block;width:350px;background-color:rgba(25, 28, 29, 0.72);margin:2px;border-radius:10px;padding:5px 15px 5px 15px;vertical-align:top;}.agario-side-panel{display:inline-block;width:220px;}#helloContainer,.connecting-panel{position:absolute;top:50%;left:50%;margin-right:-50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}#a300x250{width:300px;height:250px;background-repeat:no-repeat;background-size:contain;background-position:center center;}.agario-exp-bar{height:30px;position:relative;border:2px solid #01612B;}.agario-exp-bar .progress-bar{background-color:#338833;border-radius:0px 4px 4px 0px;-webkit-transition:none;transition:none;}.agario-exp-bar .progress-bar-text{font-size:12pt;cursor:default;opacity:0.75;color:#FFF;text-align:center;line-height:26px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;position:absolute;top:0;bottom:0;left:0;right:0;font-family:'Ubuntu',sans-serif;}#agario-results-table{width:100%;}#agario-results-table th{text-align:center;font-size:8pt;}#agario-results-table td{text-align:center;color:#999;font-size:11pt;padding-bottom:15px;}.progress-bar-star{position:absolute;top:-13px;right:-16px;width:50px;height:50px;background-image:url("img/star.png");background-size:cover;-webkit-transform:rotate3d(0,0,1,10deg);transform:rotate3d(0,0,1,10deg);-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-delay:0s;animation-delay:0s;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:default;color:#FFF;text-align:center;line-height:55px;font-size:12pt;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;font-family:'Ubuntu',sans-serif;}.tooltip-inner{max-width:300px;}.agario-profile-panel{padding:15px 15px 15px 15px;}.agario-profile-panel .agario-profile-picture{float:left;display:block;width:64px;height:64px;border-radius:5px;border:2px solid #CCC;margin-right:6px;}.agario-profile-panel .agario-profile-name-container{float:left;display:table;width:120px;height:64px;position:relative;}.agario-profile-panel .agario-profile-name-container .agario-profile-name{display:table-cell;vertical-align:middle;text-align:center;font-weight:bold;}#helloContainer[data-has-account-data="0"] .agario-profile-panel{display:none;}.agario-party,.agario-party-0,.agario-party-1,.agario-party-2,.agario-party-3,.agario-party-4,.agario-party-5,.agario-party-6{display:none;}#helloContainer[data-gamemode=":party"] .agario-party{display:block;position:relative;}#helloContainer[data-gamemode=":party"] .agario-promo{display:none;}#helloContainer[data-party-state="0"] .agario-party-0{display:block;}#helloContainer[data-party-state="1"] .agario-party-1{display:block;}#helloContainer[data-party-state="2"] .agario-party-2{display:block;}#helloContainer[data-party-state="3"] .agario-party-3{display:block;}#helloContainer[data-party-state="4"] .agario-party-4{display:block;}#helloContainer[data-party-state="5"] .agario-party-5{display:block;}#helloContainer[data-party-state="6"] .agario-party-6{display:block;}.partyToken{margin-bottom:10px;}.side-container{vertical-align:top;display:inline-block;width:224px;}.cell-spinner{display:block;margin:0;}.creating-party-text{position:absolute;cursor:default;top:0;bottom:0;left:0;right:0;width:100%;height:100%;text-align:center;color:#FFF;font-size:24px;line-height:100px;text-shadow:0px 0px 3px #000000,-1px 0px 0px #000000,1px 0px 0px #000000,0px 1px 0px #000000,0px -1px 0px #000000,-1px -1px 0px #000000,1px 1px 0px #000000,-1px 1px 0px #000000,1px -1px 0px #000000;}.agario-results-0,.agario-results-1,.agario-results-2{display:none;}#helloContainer[data-results-state="0"] .agario-results-0{display:block;}#helloContainer[data-results-state="1"] .agario-results-1{display:block;}#helloContainer[data-results-state="2"] .agario-results-2{display:block;}#options>label{display:block;width:94px;float:left;}#stats{position:relative;width:350px;height:581px;padding:0px 0px 300px 0px;overflow:hidden;}#statsPelletsContainer,#statsTimeAliveContainer,#statsHighestMassContainer,#statsTimeLeaderboardContainer,#statsPlayerCellsEatenContainer,#statsTopPositionContainer{position:absolute;width:100px;height:100px;}#statsPelletsContainer{top:30px;left:50px;}#statsHighestMassContainer{top:30px;right:50px;}#statsTimeAliveContainer{top:85px;left:50px;}#statsTimeLeaderboardContainer{top:85px;right:50px;}#statsPlayerCellsEatenContainer{top:140px;left:50px;}#statsTopPositionContainer{top:140px;right:50px;}#statsPellets{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}#statsText{position:absolute;top:0;bottom:0;left:0;right:0;line-height:100px;font-size:23px;}#statsSubtext{position:absolute;bottom:0;left:0;right:0;line-height:60px;font-size:12px;color:#000;text-align:center;}#statsChartText{position:absolute;left:20px;bottom:250px;line-height:40px;font-size:40px;}#statsChartText,#statsText{cursor:default;color:#444;text-align:center;font-weight:bold;}#statsContinue{position:absolute;left:25px;right:25px;width:300px;bottom:295px;}#statsGraph{position:absolute;bottom:350px;left:0px;right:0px;opacity:0.4;}#s300x250{position:absolute;bottom:10px;left:25px;right:25px;width:300px;height:250px;}.tosBox{z-index:1000;position:absolute;bottom:0;right:0;background-color:#FFF;border-radius:5px 0px 0px 0px;padding:5px 10px;}</style>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
@@ -174,7 +174,7 @@ i18n = i18n_dict[i18n_lang];
     var spaceDown = false;
     var cachedSkin = false;
     var wkeyDown = false;
-    var keyEPressed = false; //XXX
+    var keyEPressed = false; //EDITED
     window.onkeydown = function(event) {
       if (!(32 != event.keyCode || spaceDown)) {
         SendPos();
@@ -190,7 +190,7 @@ i18n = i18n_dict[i18n_lang];
         SendCmd(21);
         wkeyDown = true;
       }
-      if (69 == event.keyCode) { //XXX
+      if (69 == event.keyCode) { //EDITED
            if (!keyEPressed) {
            keyEPressed = true;
            timerE();
@@ -212,7 +212,7 @@ i18n = i18n_dict[i18n_lang];
         SendCmd(19);
         cachedSkin = false;
       }
-      if (69 == event.keyCode) { //XXX
+      if (69 == event.keyCode) { //EDITED
                 if (keyEPressed) {
                     keyEPressed = false;
                 }
@@ -220,9 +220,9 @@ i18n = i18n_dict[i18n_lang];
     };
     window.onblur = function() {
       SendCmd(19);
-      wkeyDown = cachedSkin = spaceDown = keyEPressed = false; //XXX
+      wkeyDown = cachedSkin = spaceDown = keyEPressed = false; //EDITED
     };
-    function timerE () { //XXX
+    function timerE () { //EDITED
       if (keyEPressed) {
           SendPos();
           SendCmd(21);
@@ -237,6 +237,9 @@ i18n = i18n_dict[i18n_lang];
     }
     SyncRegion();
     SetRegion($('#region').val());
+    $.each(g_skinNamesA, function(v, node) { //EDITED
+            $("#nicks").append($("<option></option>").attr("value", v).text(node));
+    });
     if (0 == __unmatched_112 && g_region) {
       Start();
     }
@@ -405,13 +408,8 @@ i18n = i18n_dict[i18n_lang];
         setTimeout(FindGame, 1000);
       },
       success: function(__unmatched_178) {
-        if (__unmatched_177 == __unmatched_112) {
           __unmatched_178 = __unmatched_178.split('\n');
-          if (__unmatched_178[2]) {
-            alert(__unmatched_178[2]);
-          }
           Connect('ws://' + __unmatched_178[0], __unmatched_178[1]);
-        }
       },
       dataType: 'text',
       method: 'POST',
@@ -1514,6 +1512,13 @@ i18n = i18n_dict[i18n_lang];
           window.setVirusTransparent = function(val){
             isVirusTransparent = val;
           }
+          window.nicksChange = function() {
+                var name = $("#nicks").children("option").filter(":selected").text();
+                $("#nick").val(name);
+                if (-1 != g_skinNamesA.indexOf(name)) {
+                    $("#preview").attr("src", "skins/" + name + ".png");
+                }
+            };
           window.getMapStartX = function() {
             return g_minX;
           }
@@ -2635,13 +2640,20 @@ googletag.cmd.push(function() {
 </div>
  
 </div>
-<div id="mainPanel" class="agario-panel" style="width: 1920px; height: 200px; padding: 0px; top: -100px; left: 0px;position: relative;">
+<div id="mainPanel" class="agario-panel" style="width: 1920px; height: 250px; padding: 0px; top: -100px; left: 0px;position: relative;">
 <form role="form">
 <div class="form-group clearfix">
 <div style="text-align: center; margin-left: 20px;"><h2 style="color:#F87B32">Agar.io</h2></div>
 </div>
 <div class="form-group clearfix">
-<input id="nick" class="form-control" style="padding: 15px;" placeholder="Nick" maxlength="15" autofocus />
+<div class="form-group">
+                <input id="nick" class="form-control" style="padding: 15px;" placeholder="Nick" maxlength="15" autofocus />
+                <select id="nicks" class="form-control" onchange="nicksChange();">
+                    <option selected disabled value="">Default Skin</option>
+                </select>
+                <img title="Skin preview" id="preview" data-url="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMXB4IiBoZWlnaHQ9IjFweCIgdmlld0JveD0iMCAwIDEgMSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+ICAgICAgICA8dGl0bGU+QXJ0Ym9hcmQgMjI8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4gICAgICAgIDxnIGlkPSJBcnRib2FyZC0yMiIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCI+PC9nPiAgICA8L2c+PC9zdmc+" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMXB4IiBoZWlnaHQ9IjFweCIgdmlld0JveD0iMCAwIDEgMSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+ICAgICAgICA8dGl0bGU+QXJ0Ym9hcmQgMjI8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4gICAgICAgIDxnIGlkPSJBcnRib2FyZC0yMiIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCI+PC9nPiAgICA8L2c+PC9zdmc+">
+                <br clear="both" />
+            </div>
 <select id="gamemode" class="form-control" onchange="setGameMode($(this).val());" required>
 <option selected value="" data-itr="gamemode_ffa"></option>
 <option value=":teams" data-itr="gamemode_teams"></option>
@@ -2649,7 +2661,6 @@ googletag.cmd.push(function() {
 <option value=":party" data-itr="party"></option>
 </select>
 </div>
- 
 <div class="form-group" id="agario-main-buttons">
 <button disabled type="submit" onclick="setNick(document.getElementById('nick').value); return false;" style="position: absolute; left: 43.5%; top: 78.5%" class="btn btn-play btn-primary btn-needs-server" data-itr="play"></button>
 <button disabled type="submit" onclick="setNick(document.getElementById('nick').value); return false;" class="btn btn-play-guest btn-success btn-needs-server" style="position: absolute; left: 47.5%; top: 78%" data-itr="play_as_guest"></button>
@@ -2662,17 +2673,17 @@ googletag.cmd.push(function() {
 <div id="settings" class="checkbox" style="">
 <div style="float: left; width: 200px;">
 <div id="options" style="margin: 6px; font-size: 12px;">
-<div style="position: absolute; left: 40%; top: -800%; color:#FFF;">
+<div style="position: absolute; left: 38%; top: -800%; color:#FFF;">
 <label>
 <input type="checkbox" id="checkLargeBlobBorders" onchange="setLargeBlobBorders($(this).is(':checked'));"> Large Blob Borders
 </label>
 </div>
-<div style="position: absolute; left: 40%; top: -650%; color:#FFF;">
+<div style="position: absolute; left: 38%; top: -650%; color:#FFF;">
 <label>
 <input type="checkbox" id="checkUnlimitedZoom" onchange="setUnlimitedZoom($(this).is(':checked'));"> Unlimited Zoom
 </label>
 </div>
-<div style="position: absolute; left: 40%; top: -500%; color:#FFF;">
+<div style="position: absolute; left: 38%; top: -500%; color:#FFF;">
 <label>
 <input type="checkbox" id="checkLargeNames" onchange="setLargeNames($(this).is(':checked'));"> Large Names
 </label>
@@ -2688,7 +2699,7 @@ googletag.cmd.push(function() {
 </label>
 
 </div>
-<div style="position: absolute; left: 35%; top: -800%; color:#FFF;">
+<div style="position: absolute; left: 33%; top: -800%; color:#FFF;">
 <label><input type="checkbox" onchange="setNames(!$(this).is(':checked'));"><span data-itr="option_no_names">No names</span></label>
 </div>
 <div style="position: absolute; left: 59%; top: -500%; color:#FFF;">
@@ -2697,7 +2708,7 @@ googletag.cmd.push(function() {
 <div style="position: absolute; left: 59%; top: -650%; color:#FFF;">
 <label><input type="checkbox" checked onchange="setShowMass($(this).is(':checked'));"><span data-itr="option_show_mass">Show mass</span></label>
 </div>
-<div style="position: absolute; left: 35%; top: -650%; color:#FFF;">
+<div style="position: absolute; left: 33%; top: -650%; color:#FFF;">
 <label><input type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"><span data-itr="option_dark_theme">Dark theme</span></label>
 </div>
 <div style="position: absolute; left: 64%; top: -650%; color:#FFF;">
@@ -2706,8 +2717,8 @@ googletag.cmd.push(function() {
 </div>
 </div>
 <div style="float: right; width: 120px;">
-<button onclick="spectate(); return false;" style="position: absolute; top: -195%; right: 56.8%;" disabled class="btn btn-warning btn-spectate btn-needs-server" data-itr="spectate"></button>
-<button onclick="logout(); return false;" class="btn btn-danger btn-logout" style="position: absolute; top: -195%; left: 58%;" data-itr="logout"></button>
+<button onclick="spectate(); return false;" style="position: absolute; top: -35px; right: 56.8%;" disabled class="btn btn-warning btn-spectate btn-needs-server" data-itr="spectate"></button>
+<button onclick="logout(); return false;" class="btn btn-danger btn-logout" style="position: absolute; top: -35px; left: 58%;" data-itr="logout"></button>
 </div>
 <br clear="both"/>
 </div>
